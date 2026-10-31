@@ -42,42 +42,99 @@
       "id": "memory",
       "title": "Memory & Cognitive Load",
       "concepts": [
-        "forgetting-spacing",
-        "memory-architecture",
-        "working-memory-limits",
-        "cognitive-load"
+        {
+          "id": "forgetting-spacing",
+          "name": "Forgetting & spacing"
+        },
+        {
+          "id": "memory-architecture",
+          "name": "Memory architecture"
+        },
+        {
+          "id": "working-memory-limits",
+          "name": "Working memory limits"
+        },
+        {
+          "id": "cognitive-load",
+          "name": "Cognitive load"
+        }
       ]
     },
     {
       "id": "motivation",
       "title": "Motivation",
       "concepts": [
-        "self-determination",
-        "rewards-dark-patterns",
-        "expectancy-value",
-        "flow-interest",
-        "attribution-feedback",
-        "goal-orientation"
+        {
+          "id": "self-determination",
+          "name": "Self-determination theory",
+          "short": "Self-determination"
+        },
+        {
+          "id": "rewards-dark-patterns",
+          "name": "Rewards & dark patterns"
+        },
+        {
+          "id": "expectancy-value",
+          "name": "Expectancy-value theory",
+          "short": "Expectancy-value"
+        },
+        {
+          "id": "flow-interest",
+          "name": "Flow & interest"
+        },
+        {
+          "id": "attribution-feedback",
+          "name": "Attribution & feedback"
+        },
+        {
+          "id": "goal-orientation",
+          "name": "Goal orientation"
+        }
       ]
     },
     {
       "id": "constructivism",
       "title": "Constructivism & Scaffolding",
       "concepts": [
-        "constructivism-core",
-        "piaget",
-        "zpd-scaffolding",
-        "conceptual-change",
-        "guidance-debate",
-        "fading-hints"
+        {
+          "id": "constructivism-core",
+          "name": "Constructivism"
+        },
+        {
+          "id": "piaget",
+          "name": "Piaget: assimilation & accommodation",
+          "short": "Piaget"
+        },
+        {
+          "id": "zpd-scaffolding",
+          "name": "ZPD & scaffolding"
+        },
+        {
+          "id": "conceptual-change",
+          "name": "Conceptual change"
+        },
+        {
+          "id": "guidance-debate",
+          "name": "The guidance debate"
+        },
+        {
+          "id": "fading-hints",
+          "name": "Fading & hints"
+        }
       ]
     },
     {
       "id": "reinforcement",
       "title": "Reinforcement (Behaviorism)",
       "concepts": [
-        "reinforcement-punishment",
-        "behaviorist-foundations"
+        {
+          "id": "reinforcement-punishment",
+          "name": "Reinforcement & punishment"
+        },
+        {
+          "id": "behaviorist-foundations",
+          "name": "Behaviorist foundations"
+        }
       ]
     }
   ],
@@ -2053,6 +2110,102 @@
         "Software scaffolds are easy to leave switched on; fading must be designed in"
       ],
       "explanation": "Fading is the part the technology tends to forget (Quintana, Soloway and colleagues).",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-19",
+      "concept": "constructivism-core",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-core",
+      "prompt": "A teacher lectures, students copy her slides word for word, and the quiz asks them to recite the slides back. What would a constructivist object to?",
+      "answer": "It treats learning as copying knowledge from her head into theirs instead of helping students construct it",
+      "distractors": [
+        {
+          "text": "Students should build a physical project instead of taking notes",
+          "misconception": "Constructivism means building things",
+          "feedback": "Building an external artifact is constructionism. Constructivism is about the mental model students construct, which can happen without making anything."
+        },
+        {
+          "text": "Nothing: if they can recite it, the knowledge was transferred",
+          "misconception": "Reciting means understanding",
+          "feedback": "Constructivism rejects the idea that knowledge is copied from one head to another. Reciting slides doesn't show that a model was built."
+        },
+        {
+          "text": "Students should be left to figure it out with no guidance at all",
+          "misconception": "Constructivism means no teaching",
+          "feedback": "Constructivism says learning should help students construct knowledge. Fully unguided discovery is a separate claim, and the notes question it in The Limits of Constructivism."
+        }
+      ],
+      "explanation": "Constructivism challenged the idea that learning means copying knowledge from one person's head into another. Knowledge is actively constructed, so teaching should help students do that constructing.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-20",
+      "concept": "piaget",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-piaget",
+      "prompt": "A toddler calls every four-legged animal \"doggy.\" At a farm, they notice a cow is huge and moos, and they start using a new word for it: \"cow.\" What just happened?",
+      "answer": "Accommodation",
+      "distractors": [
+        {
+          "text": "Assimilation",
+          "misconception": "Any new learning is assimilation",
+          "feedback": "Assimilation would be calling the cow \"doggy\": fitting it into the existing structure. Here the structure itself had to change to make room for cows."
+        },
+        {
+          "text": "Scaffolding",
+          "misconception": "Any learning gain is scaffolding",
+          "feedback": "Scaffolding is temporary support from someone else. Nobody helped here; the child's own mental structure was reshaped."
+        },
+        {
+          "text": "Constructionism",
+          "misconception": "Constructing anything is constructionism",
+          "feedback": "Constructionism is about building an external artifact. The child rebuilt a mental category, not an object."
+        }
+      ],
+      "explanation": "In accommodation, a new experience won't fit the existing structure, so the structure itself is reshaped. Calling the cow \"doggy\" would have been assimilation.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-21",
+      "concept": "zpd-scaffolding",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-zpd",
+      "prompt": "Maya solves one-step equations on her own. She can't solve two-step equations alone, but she can when a tutor prompts each step. Where should the tutor focus?",
+      "answer": "Two-step equations, with prompts she can rely on less over time",
+      "distractors": [
+        {
+          "text": "More one-step equations, since she already gets those right",
+          "misconception": "Practice what's comfortable",
+          "feedback": "She can already do those alone, so they're below her zone of proximal development. Little new learning happens there."
+        },
+        {
+          "text": "Three-step word problems with no help, to really stretch her",
+          "misconception": "Harder is always better",
+          "feedback": "Even with support that's likely out of reach. The ZPD is what she can do with support, not anything harder than her current level."
+        },
+        {
+          "text": "Two-step equations with no help, so she learns independence",
+          "misconception": "Support is a crutch",
+          "feedback": "She can't do these alone yet. The support is what puts them in reach, and it should fade as she improves rather than be withheld from the start."
+        }
+      ],
+      "explanation": "Two-step equations sit in Maya's ZPD: she can do them with support but not alone. Scaffolding is the temporary support that gets her there, faded as her competence grows.",
       "topic": "constructivism"
     },
     {
