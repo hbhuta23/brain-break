@@ -1,0 +1,68 @@
+.shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.7rem 16px;
+  background: color-mix(in srgb, var(--ink) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 2.5px solid #000;
+  flex-wrap: wrap;
+}
+.topbar-logo {
+  text-decoration: none;
+}
+.topnav {
+  display: flex;
+  gap: 0.3rem;
+}
+.topnav a {
+  padding: 0.45em 0.9em;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+.topnav a:hover {
+  color: var(--text);
+}
+.topnav a.active {
+  color: #111;
+  background: var(--text);
+  border-color: #000;
+  box-shadow: var(--pop-sm);
+}
+.clock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.placeholder-banner {
+  background: repeating-linear-gradient(-45deg, #ffd23f 0 14px, #f2c21c 14px 28px);
+  color: #111;
+  border-bottom: 2.5px solid #000;
+  padding: 0.45rem 16px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .topbar {
+    gap: 0.6rem;
+  }
+  .topnav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .clock .chip {
+    display: none;
+  }
+}

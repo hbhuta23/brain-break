@@ -1,0 +1,141 @@
+.pt {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.pt > .btn {
+  align-self: flex-start;
+}
+.pt-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.pt-bar {
+  flex: 1;
+  height: 14px;
+  border: 2.5px solid #000;
+  border-radius: 99px;
+  background: var(--panel-2);
+  overflow: hidden;
+}
+.pt-bar span {
+  display: block;
+  height: 100%;
+  background: var(--yellow);
+  transition: width 250ms ease;
+}
+.pt-count {
+  font-size: 1.1rem;
+}
+.pt-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.6rem;
+}
+.pt-stem {
+  margin: 0;
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+.pt-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.pt-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  border: 2.5px solid #000;
+  border-radius: var(--r);
+  background: var(--panel-2);
+  box-shadow: var(--pop-sm);
+  text-align: left;
+  font-weight: 500;
+  font-size: 1.02rem;
+  cursor: pointer;
+  transition: transform 90ms, background 120ms;
+}
+.pt-choice:hover {
+  background: #2c3145;
+  transform: translateX(3px);
+}
+.pt-choice:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+.pt-letter {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: var(--yellow);
+  color: #111;
+  border: 2px solid #000;
+  font-size: 0.95rem;
+}
+.pt-unsure {
+  align-self: flex-start;
+}
+.pt-foot {
+  font-size: 0.85rem;
+  margin: 0;
+}
+.pt-sum-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+.pt-sum-head p {
+  margin: 0;
+}
+.pt-score {
+  font-size: 4.5rem;
+  color: var(--yellow);
+  -webkit-text-stroke: 3px #000;
+  paint-order: stroke fill;
+  text-shadow: 0 6px 0 #000;
+}
+.pt-score small {
+  font-size: 0.45em;
+  color: var(--text);
+}
+.pt-h {
+  font-size: 1.25rem;
+}
+.pt-mis {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.1rem;
+}
+.pt-mis p {
+  margin: 0;
+}
+.pt-mis-q {
+  font-weight: 700;
+}
+.pt-k {
+  display: inline-block;
+  width: 5rem;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.pt-you {
+  color: #ffb3b8;
+}
+.pt-right {
+  color: var(--green);
+  font-weight: 700;
+}

@@ -1,0 +1,242 @@
+{
+  "id": "sample",
+  "title": "Sample Deck (placeholder)",
+  "description": "Development sample so the games run. It will be replaced by the real Module 1 deck.",
+  "author": "Brain Break",
+  "version": 1,
+  "placeholder": true,
+  "topics": [
+    { "id": "memory", "title": "Memory & Cognitive Load", "blurb": "How we remember, and what gets in the way." },
+    { "id": "motivation", "title": "Motivation", "blurb": "Why learners start, keep going, or quit." },
+    { "id": "constructivism", "title": "Constructivism & Scaffolding", "blurb": "Building knowledge with the right amount of help." }
+  ],
+  "concepts": [
+    { "id": "testing-effect", "topic": "memory", "name": "Testing effect", "short": "Testing effect", "definition": "Retrieving information from memory strengthens long-term retention more than re-studying it." },
+    { "id": "spacing-effect", "topic": "memory", "name": "Spacing effect", "short": "Spacing effect", "definition": "Practice spread out over time is retained better than the same practice massed together." },
+    { "id": "intrinsic-load", "topic": "memory", "name": "Intrinsic cognitive load", "short": "Intrinsic load", "definition": "Load caused by the complexity of the material itself: how many elements must be processed together." },
+    { "id": "extraneous-load", "topic": "memory", "name": "Extraneous cognitive load", "short": "Extraneous load", "definition": "Load caused by how material is presented, which does not help learning." },
+    { "id": "germane-load", "topic": "memory", "name": "Germane cognitive load", "short": "Germane load", "definition": "Effort devoted to building and organising schemas." },
+
+    { "id": "positive-reinforcement", "topic": "motivation", "name": "Positive reinforcement", "short": "Positive reinforcement", "definition": "Adding something after a behavior so that the behavior increases." },
+    { "id": "negative-reinforcement", "topic": "motivation", "name": "Negative reinforcement", "short": "Negative reinforcement", "definition": "Removing something after a behavior so that the behavior increases." },
+    { "id": "positive-punishment", "topic": "motivation", "name": "Positive punishment", "short": "Positive punishment", "definition": "Adding something after a behavior so that the behavior decreases." },
+    { "id": "negative-punishment", "topic": "motivation", "name": "Negative punishment", "short": "Negative punishment", "definition": "Removing something after a behavior so that the behavior decreases." },
+    { "id": "overjustification", "topic": "motivation", "name": "Overjustification effect", "short": "Overjustification", "definition": "External rewards for an already-enjoyable activity can reduce intrinsic motivation for it." },
+    { "id": "self-determination", "topic": "motivation", "name": "Self-determination theory", "short": "Self-determination", "definition": "Motivation thrives when needs for autonomy, competence and relatedness are met." },
+    { "id": "interest-development", "topic": "motivation", "name": "Four-phase model of interest", "short": "Phases of interest", "definition": "Interest develops from triggered situational, to maintained situational, to emerging individual, to well-developed individual interest." },
+
+    { "id": "zpd", "topic": "constructivism", "name": "Zone of proximal development", "short": "ZPD", "definition": "The range of tasks a learner can do with help but not yet alone." },
+    { "id": "scaffolding", "topic": "constructivism", "name": "Scaffolding", "short": "Scaffolding", "definition": "Temporary support that lets a learner complete a task within their ZPD." },
+    { "id": "fading", "topic": "constructivism", "name": "Fading", "short": "Fading", "definition": "Gradually withdrawing scaffolding as the learner becomes more capable." }
+  ],
+  "sliceGroups": [
+    { "id": "reinforcement", "title": "Reinforcement vs punishment", "concepts": ["positive-reinforcement", "negative-reinforcement", "positive-punishment", "negative-punishment"] },
+    { "id": "load-types", "title": "Types of cognitive load", "concepts": ["intrinsic-load", "extraneous-load", "germane-load"] }
+  ],
+  "questions": [
+    {
+      "id": "testing-01", "type": "mcq", "format": "fact", "concept": "testing-effect", "bloom": "remember", "pretest": true,
+      "stem": "Pulling information out of memory improves long-term retention more than rereading it. This is the…",
+      "answer": "Testing effect",
+      "distractors": [
+        { "text": "Spacing effect", "misconception": "Spacing is about when you practice (spread over days), not about retrieving versus rereading." },
+        { "text": "Fluency illusion", "misconception": "The fluency illusion is why rereading feels like it works: familiar text reads smoothly. It's the trap, not the benefit." }
+      ],
+      "explanation": "Each act of retrieval strengthens the memory and makes it easier to retrieve next time. Rereading only makes the text feel familiar.",
+      "source": { "passage": "PLACEHOLDER: Roediger & Karpicke (2006) found students who took practice tests remembered more a week later than students who reread, even though rereaders predicted they would do better.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "testing-02", "type": "mcq", "format": "scenario", "concept": "testing-effect", "bloom": "apply", "pretest": true,
+      "stem": "Jordan closes the book, writes down everything they remember about a chapter, then checks. Jordan is using…",
+      "answer": "The testing effect",
+      "distractors": [
+        { "text": "The spacing effect", "misconception": "Nothing here is spread across days. It's one session, so this isn't spacing." },
+        { "text": "Extraneous load", "misconception": "Extraneous load is wasted effort from bad presentation. Jordan's effort is the useful, retrieval kind." }
+      ],
+      "explanation": "Writing from memory and then checking is retrieval practice, which is what produces the testing effect.",
+      "source": { "passage": "PLACEHOLDER: Free recall followed by checking against the source is one of the most effective forms of practice testing (Dunlosky et al., 2013).", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "spacing-01", "type": "mcq", "format": "fact", "concept": "spacing-effect", "bloom": "remember",
+      "stem": "Spreading study sessions over several days instead of cramming them into one is the…",
+      "answer": "Spacing effect",
+      "distractors": [
+        { "text": "Testing effect", "misconception": "The testing effect is about retrieving instead of rereading. You can test yourself while cramming, too." },
+        { "text": "Interleaving", "misconception": "Interleaving mixes different topics within a session. Spacing spreads the same topic across time." }
+      ],
+      "explanation": "Forgetting a little between sessions makes the next retrieval harder, and that 'desirable difficulty' makes the memory last longer.",
+      "source": { "passage": "PLACEHOLDER: Distributed practice was rated high utility by Dunlosky et al. (2013).", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "spacing-02", "type": "mcq", "format": "scenario", "concept": "spacing-effect", "bloom": "apply", "pretest": true,
+      "stem": "Maya quizzes herself 20 min on Mon, Wed and Fri instead of 1 hour Thursday night. Which principle is she using?",
+      "answer": "Spacing effect",
+      "distractors": [
+        { "text": "Overjustification", "misconception": "Overjustification is about rewards undermining enjoyment. Nothing about rewards here." },
+        { "text": "Reducing intrinsic load", "misconception": "Intrinsic load depends on the material's complexity, which stays the same whatever the schedule." }
+      ],
+      "explanation": "Same total time, but distributed across days. That's spacing, and it beats one long session for long-term retention.",
+      "source": { "passage": "PLACEHOLDER: The same amount of practice, distributed over time, produces better long-term retention than massed practice.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "load-01", "type": "mcq", "format": "fact", "concept": "intrinsic-load", "bloom": "remember",
+      "stem": "Cognitive load that comes from how complex the material itself is:",
+      "answer": "Intrinsic load",
+      "distractors": [
+        { "text": "Extraneous load", "misconception": "Extraneous load comes from how material is presented, not from the material itself." },
+        { "text": "Germane load", "misconception": "Germane load is the effort spent building understanding, not the difficulty of the content." }
+      ],
+      "explanation": "Intrinsic load depends on how many elements must be held and related at once. It goes down as you build schemas, but the material stays the same.",
+      "source": { "passage": "PLACEHOLDER: Sweller describes intrinsic load as determined by element interactivity.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "load-02", "type": "mcq", "format": "scenario", "concept": "extraneous-load", "bloom": "apply", "pretest": true,
+      "stem": "A slide shows a diagram, but its labels are on the next slide, so students flip back and forth. That adds…",
+      "answer": "Extraneous load",
+      "distractors": [
+        { "text": "Intrinsic load", "misconception": "The content isn't any harder. The layout is causing the extra work, which makes it extraneous." },
+        { "text": "Germane load", "misconception": "Flipping slides doesn't build understanding. It's wasted effort, not productive effort." }
+      ],
+      "explanation": "Splitting related information forces learners to integrate it themselves (the split-attention effect), which is classic extraneous load.",
+      "source": { "passage": "PLACEHOLDER: Split-attention designs increase extraneous load; integrating labels into diagrams reduces it.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "load-03", "type": "mcq", "format": "fact", "concept": "germane-load", "bloom": "remember",
+      "stem": "Mental effort spent building and organising schemas — the 'productive' kind — is…",
+      "answer": "Germane load",
+      "distractors": [
+        { "text": "Intrinsic load", "misconception": "Intrinsic load is set by the material's complexity, not by the learner's sense-making effort." },
+        { "text": "Extraneous load", "misconception": "Extraneous load is the unhelpful kind, caused by poor design." }
+      ],
+      "explanation": "Good instructional design cuts extraneous load to free up working memory for germane processing.",
+      "source": { "passage": "PLACEHOLDER: Germane load refers to working memory resources devoted to schema acquisition.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "reinf-01", "type": "mcq", "format": "fact", "concept": "negative-reinforcement", "bloom": "understand", "pretest": true,
+      "stem": "Negative reinforcement means…",
+      "answer": "Remove something → behavior goes up",
+      "distractors": [
+        { "text": "Add something → behavior goes down", "misconception": "That's positive punishment. 'Negative' means removing, not 'bad', and reinforcement always increases behavior." },
+        { "text": "Remove something → behavior goes down", "misconception": "That's negative punishment. Anything that makes behavior go down is punishment, not reinforcement." }
+      ],
+      "explanation": "Reinforcement always increases behavior. 'Negative' means something is taken away, like an annoying beep stopping when you buckle up.",
+      "source": { "passage": "PLACEHOLDER: In operant conditioning, 'positive' and 'negative' refer to adding or removing a stimulus; reinforcement increases a behavior and punishment decreases it.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "reinf-02", "type": "mcq", "format": "scenario", "concept": "negative-reinforcement", "bloom": "apply", "pretest": true,
+      "stem": "Your car beeps until you buckle your seatbelt. Soon you buckle up right away. This is…",
+      "answer": "Negative reinforcement",
+      "distractors": [
+        { "text": "Positive punishment", "misconception": "The beep is annoying, but buckling goes up, so it's reinforcement. The beep being removed is what strengthens buckling." },
+        { "text": "Negative punishment", "misconception": "Punishment makes behavior decrease. Here a behavior (buckling) increases." }
+      ],
+      "explanation": "An unpleasant stimulus (beeping) is removed when you buckle, so buckling increases. Removal plus increase is negative reinforcement.",
+      "source": { "passage": "PLACEHOLDER: Escape and avoidance learning are examples of negative reinforcement.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "reinf-03", "type": "mcq", "format": "scenario", "concept": "positive-punishment", "bloom": "apply",
+      "stem": "A student gets extra chores every time they're late, and stops being late. This is…",
+      "answer": "Positive punishment",
+      "distractors": [
+        { "text": "Negative reinforcement", "misconception": "The most common mix-up! Lateness goes down, so this is punishment, and chores are added, so it's positive." },
+        { "text": "Negative punishment", "misconception": "Nothing is taken away. Chores are added, which makes it positive." }
+      ],
+      "explanation": "Something unpleasant is added (chores) and the behavior (lateness) decreases. Added plus decrease is positive punishment.",
+      "source": { "passage": "PLACEHOLDER: Positive punishment presents an aversive stimulus after a behavior to reduce it.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "motiv-01", "type": "mcq", "format": "scenario", "concept": "overjustification", "bloom": "apply", "pretest": true,
+      "stem": "Kids who already loved drawing were paid to draw. When the pay stopped, they drew less than before. This is the…",
+      "answer": "Overjustification effect",
+      "distractors": [
+        { "text": "Hawthorne effect", "misconception": "The Hawthorne effect is behavior changing because people know they're being watched. This is about rewards." },
+        { "text": "Learned helplessness", "misconception": "Learned helplessness is giving up after repeated failure you can't control. These kids weren't failing." }
+      ],
+      "explanation": "An external reward reframed an enjoyable activity as work 'for pay', so intrinsic motivation dropped once the reward was gone.",
+      "source": { "passage": "PLACEHOLDER: Lepper, Greene & Nisbett (1973) found that expected rewards decreased children's later free-choice drawing.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "motiv-02", "type": "mcq", "format": "fact", "concept": "self-determination", "bloom": "remember", "pretest": true,
+      "stem": "Self-determination theory's three basic needs are autonomy, competence, and…",
+      "answer": "Relatedness",
+      "distractors": [
+        { "text": "Rewards", "misconception": "SDT is about internal psychological needs. Rewards are external and can even undermine intrinsic motivation." },
+        { "text": "Achievement", "misconception": "Achievement is close to competence, which is already on the list. The third need is about connection to others." }
+      ],
+      "explanation": "Deci & Ryan: people are most self-motivated when they feel in control (autonomy), capable (competence) and connected (relatedness).",
+      "source": { "passage": "PLACEHOLDER: Self-determination theory identifies autonomy, competence and relatedness as basic psychological needs.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "motiv-03", "type": "mcq", "format": "fact", "concept": "interest-development", "bloom": "remember",
+      "stem": "In Hidi & Renninger's four-phase model, interest starts as…",
+      "answer": "Triggered situational interest",
+      "distractors": [
+        { "text": "Well-developed individual interest", "misconception": "That's the last phase, a lasting personal interest you return to on your own." },
+        { "text": "Emerging individual interest", "misconception": "That's phase three. Interest has to be sparked and held by the situation first." }
+      ],
+      "explanation": "Interest is first sparked by something in the environment, then held by it, then becomes the learner's own, and finally well-developed.",
+      "source": { "passage": "PLACEHOLDER: Hidi & Renninger (2006) describe four phases: triggered situational, maintained situational, emerging individual, and well-developed individual interest.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "construct-01", "type": "mcq", "format": "fact", "concept": "zpd", "bloom": "remember", "pretest": true,
+      "stem": "The gap between what a learner can do alone and what they can do with help is the…",
+      "answer": "Zone of proximal development",
+      "distractors": [
+        { "text": "Scaffolding", "misconception": "Scaffolding is the help given inside that gap, not the gap itself." },
+        { "text": "Intrinsic load", "misconception": "Intrinsic load is about material complexity, not about what help lets a learner do." }
+      ],
+      "explanation": "Vygotsky's ZPD is where instruction is most useful: tasks just beyond what the learner can do alone.",
+      "source": { "passage": "PLACEHOLDER: Vygotsky defined the ZPD as the distance between actual development and potential development under guidance.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "construct-02", "type": "mcq", "format": "fact", "concept": "scaffolding", "bloom": "remember", "pretest": true,
+      "stem": "Who first used the word 'scaffolding' for the support a tutor gives a learner?",
+      "answer": "Wood, Bruner & Ross",
+      "distractors": [
+        { "text": "Vygotsky", "misconception": "Vygotsky described the ZPD. The term 'scaffolding' came later, from Wood, Bruner & Ross (1976)." },
+        { "text": "Skinner", "misconception": "Skinner studied reinforcement schedules, not tutoring support." }
+      ],
+      "explanation": "Wood, Bruner & Ross (1976) coined 'scaffolding' while studying how tutors helped children build a block pyramid.",
+      "source": { "passage": "PLACEHOLDER: Wood, Bruner and Ross (1976) introduced scaffolding to describe tutorial support.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+    {
+      "id": "construct-03", "type": "mcq", "format": "scenario", "concept": "fading", "bloom": "apply",
+      "stem": "A tutor gives lots of hints at first, then fewer as the student improves. Giving fewer hints is called…",
+      "answer": "Fading",
+      "distractors": [
+        { "text": "Negative punishment", "misconception": "Removing help isn't done to decrease a behavior. It's done because the learner no longer needs it." },
+        { "text": "Spacing", "misconception": "Spacing is about timing practice across days, not about how much help is given." }
+      ],
+      "explanation": "Scaffolds are meant to be temporary. Fading hands responsibility back to the learner, which software often forgets to do (Quintana et al.).",
+      "source": { "passage": "PLACEHOLDER: Effective scaffolding fades as learners gain competence.", "ref": "Sample deck — replace with Module 1 notes" }
+    },
+
+    { "id": "slice-pr-01", "type": "slice", "group": "reinforcement", "concept": "positive-reinforcement", "bloom": "understand", "text": "A dog gets a treat for sitting, and sits more often.", "explanation": "A treat is added and sitting goes up: positive reinforcement.", "source": { "passage": "PLACEHOLDER: Positive reinforcement adds a desirable stimulus to increase behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-pr-02", "type": "slice", "group": "reinforcement", "concept": "positive-reinforcement", "bloom": "understand", "text": "Confetti pops after each study streak, so you keep studying daily.", "explanation": "Confetti is added and studying goes up: positive reinforcement.", "source": { "passage": "PLACEHOLDER: Positive reinforcement adds a desirable stimulus to increase behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-pr-03", "type": "slice", "group": "reinforcement", "concept": "positive-reinforcement", "bloom": "apply", "text": "A shy student is praised for answering, and answers more.", "explanation": "Praise is added and answering goes up: positive reinforcement.", "source": { "passage": "PLACEHOLDER: Positive reinforcement adds a desirable stimulus to increase behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+
+    { "id": "slice-nr-01", "type": "slice", "group": "reinforcement", "concept": "negative-reinforcement", "bloom": "understand", "text": "The car stops beeping once you buckle up, so you buckle faster.", "explanation": "The beep is removed and buckling goes up: negative reinforcement.", "source": { "passage": "PLACEHOLDER: Negative reinforcement removes an aversive stimulus to increase behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-nr-02", "type": "slice", "group": "reinforcement", "concept": "negative-reinforcement", "bloom": "understand", "text": "Aspirin makes a headache go away, so you reach for it sooner.", "explanation": "Pain is removed and taking aspirin goes up: negative reinforcement.", "source": { "passage": "PLACEHOLDER: Negative reinforcement removes an aversive stimulus to increase behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-nr-03", "type": "slice", "group": "reinforcement", "concept": "negative-reinforcement", "bloom": "apply", "text": "A teen cleans their room to make the nagging stop, and does it again.", "explanation": "Nagging is removed and cleaning goes up: negative reinforcement.", "source": { "passage": "PLACEHOLDER: Negative reinforcement removes an aversive stimulus to increase behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+
+    { "id": "slice-pp-01", "type": "slice", "group": "reinforcement", "concept": "positive-punishment", "bloom": "understand", "text": "A driver gets a speeding ticket and drives slower after.", "explanation": "A fine is added and speeding goes down: positive punishment.", "source": { "passage": "PLACEHOLDER: Positive punishment adds an aversive stimulus to decrease behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-pp-02", "type": "slice", "group": "reinforcement", "concept": "positive-punishment", "bloom": "understand", "text": "A player runs extra laps for talking in practice, and talks less.", "explanation": "Laps are added and talking goes down: positive punishment.", "source": { "passage": "PLACEHOLDER: Positive punishment adds an aversive stimulus to decrease behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-pp-03", "type": "slice", "group": "reinforcement", "concept": "positive-punishment", "bloom": "apply", "text": "Touching a hot stove hurts, so a toddler stops touching it.", "explanation": "Pain is added and touching goes down: positive punishment.", "source": { "passage": "PLACEHOLDER: Positive punishment adds an aversive stimulus to decrease behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+
+    { "id": "slice-np-01", "type": "slice", "group": "reinforcement", "concept": "negative-punishment", "bloom": "understand", "text": "A teen loses phone privileges for missing curfew and comes home on time.", "explanation": "The phone is removed and missing curfew goes down: negative punishment.", "source": { "passage": "PLACEHOLDER: Negative punishment removes a desirable stimulus to decrease behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-np-02", "type": "slice", "group": "reinforcement", "concept": "negative-punishment", "bloom": "understand", "text": "Recess is taken away for shoving, and the shoving stops.", "explanation": "Recess is removed and shoving goes down: negative punishment.", "source": { "passage": "PLACEHOLDER: Negative punishment removes a desirable stimulus to decrease behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-np-03", "type": "slice", "group": "reinforcement", "concept": "negative-punishment", "bloom": "apply", "text": "A gamer's console time is cut for skipping homework, and they skip less.", "explanation": "Console time is removed and skipping goes down: negative punishment.", "source": { "passage": "PLACEHOLDER: Negative punishment removes a desirable stimulus to decrease behavior.", "ref": "Sample deck — replace with Module 1 notes" } },
+
+    { "id": "slice-il-01", "type": "slice", "group": "load-types", "concept": "intrinsic-load", "bloom": "understand", "text": "A proof where six ideas must be held in mind at once.", "explanation": "The difficulty comes from many interacting elements in the material itself: intrinsic load.", "source": { "passage": "PLACEHOLDER: Intrinsic load is determined by element interactivity.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-il-02", "type": "slice", "group": "load-types", "concept": "intrinsic-load", "bloom": "understand", "text": "A chemical reaction with several steps that each depend on the last.", "explanation": "The steps interact, so the content is inherently complex: intrinsic load.", "source": { "passage": "PLACEHOLDER: Intrinsic load is determined by element interactivity.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-il-03", "type": "slice", "group": "load-types", "concept": "intrinsic-load", "bloom": "apply", "text": "Grammar rules where each one changes how three others apply.", "explanation": "High element interactivity in the material itself: intrinsic load.", "source": { "passage": "PLACEHOLDER: Intrinsic load is determined by element interactivity.", "ref": "Sample deck — replace with Module 1 notes" } },
+
+    { "id": "slice-el-01", "type": "slice", "group": "load-types", "concept": "extraneous-load", "bloom": "understand", "text": "Background music with lyrics during a reading lesson.", "explanation": "The music adds processing that doesn't help learning: extraneous load.", "source": { "passage": "PLACEHOLDER: Extraneous load is imposed by the design of instruction.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-el-02", "type": "slice", "group": "load-types", "concept": "extraneous-load", "bloom": "understand", "text": "A diagram on one slide and its labels on the next.", "explanation": "Split attention caused by layout: extraneous load.", "source": { "passage": "PLACEHOLDER: Extraneous load is imposed by the design of instruction.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-el-03", "type": "slice", "group": "load-types", "concept": "extraneous-load", "bloom": "apply", "text": "A narrator reads out the exact text already on screen.", "explanation": "Redundant information that has to be processed twice: extraneous load.", "source": { "passage": "PLACEHOLDER: Extraneous load is imposed by the design of instruction.", "ref": "Sample deck — replace with Module 1 notes" } },
+
+    { "id": "slice-gl-01", "type": "slice", "group": "load-types", "concept": "germane-load", "bloom": "understand", "text": "Comparing two worked examples to find the rule they share.", "explanation": "Effort that goes into building a schema: germane load.", "source": { "passage": "PLACEHOLDER: Germane load is effort devoted to schema construction.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-gl-02", "type": "slice", "group": "load-types", "concept": "germane-load", "bloom": "understand", "text": "Explaining to yourself why each step of a solution works.", "explanation": "Self-explanation builds understanding: germane load.", "source": { "passage": "PLACEHOLDER: Germane load is effort devoted to schema construction.", "ref": "Sample deck — replace with Module 1 notes" } },
+    { "id": "slice-gl-03", "type": "slice", "group": "load-types", "concept": "germane-load", "bloom": "apply", "text": "Fitting new terms into a concept map you already built.", "explanation": "Linking new ideas to an existing schema: germane load.", "source": { "passage": "PLACEHOLDER: Germane load is effort devoted to schema construction.", "ref": "Sample deck — replace with Module 1 notes" } }
+  ]
+}

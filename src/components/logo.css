@@ -1,0 +1,41 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: inherit;
+}
+.logo-words {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.86;
+  transform: rotate(-3deg);
+}
+.logo-words span {
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  text-shadow: 0 3px 0 #000;
+}
+.logo-brain {
+  color: var(--yellow);
+  font-size: 1.15rem;
+}
+.logo-break {
+  color: var(--text);
+  font-size: 1.15rem;
+  margin-left: 0.6em;
+}
+.logo-xl .logo-words span {
+  -webkit-text-stroke-width: 4px;
+  text-shadow: 0 7px 0 #000;
+}
+.logo-xl .logo-brain,
+.logo-xl .logo-break {
+  font-size: clamp(2.6rem, 9vw, 4.6rem);
+}
+.logo-xl {
+  gap: 1rem;
+}
+.logo-xl .brain-mark {
+  animation: wiggle 2.4s ease-in-out infinite;
+}
