@@ -25,8 +25,8 @@ manageable is the architecture already built for M1:
 
 - **One engine, many games.** The scheduler, mastery rule, logging, feedback
   card and results screen are shared. A new game is only a Phaser scene that
-  takes a list of cards and reports answers. Fruit Slice reused all of it
-  without changes to the engine.
+  takes a list of cards and reports answers. Lane Runner and Fruit Slice
+  already run on the same engine.
 - **Rooms are data.** The Escape Room will be one engine. Rooms 2 and 3 are
   mostly a list of walls, objects and which locks they hold, plus artwork.
 - **Hardest part first.** Room 1 is scheduled for the week right after M1, so
