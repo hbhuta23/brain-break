@@ -10,6 +10,7 @@ import './pretest.css';
 interface Choice {
   text: string;
   correct: boolean;
+  label?: string;
   misconception?: string;
 }
 
@@ -19,6 +20,7 @@ interface Answer {
   response: string;
   rtMs: number;
   misconception?: string;
+  label?: string;
 }
 
 const UNSURE = 'Not sure yet';
@@ -42,7 +44,7 @@ export function Pretest() {
     const flagged = mcqs.filter((q) => q.pretest);
     return (flagged.length ? flagged : mcqs).slice(0, 10).map((q) => ({
       q,
-      choices: shuffle<Choice>([{ text: q.answer, correct: true }, ...q.distractors.map((d) => ({ text: d.text, correct: false, misconception: d.misconception }))]),
+      choices: shuffle<Choice>([{ text: q.answer, correct: true }, ...q.distractors.map((d) => ({ text: d.text, correct: false, label: d.label, misconception: d.misconception }))]),
     }));
   }, [index]);
 
@@ -63,10 +65,12 @@ export function Pretest() {
       response: c?.text ?? UNSURE,
       rtMs: Date.now() - shownAt.current,
       misconception: c && !c.correct ? c.misconception : undefined,
+      label: c && !c.correct ? c.label : undefined,
     };
     const next = [...answers, a];
     setAnswers(next);
-    if (next.length === questions.length) recordPretest(sessionId, next);
+    // Log the short misconception label (codable for analysis), not the full feedback text.
+    if (next.length === questions.length) recordPretest(sessionId, next.map((x) => ({ ...x, misconception: x.label })));
     else setI(i + 1);
   };
 
@@ -152,6 +156,7 @@ function PretestSummary({ answers, conceptName, onDone }: { answers: Answer[]; c
           <h2 className="display pt-h">Mix-ups we spotted</h2>
           {misconceptions.map((a) => (
             <article key={a.q.id} className="panel pt-mis">
+              {a.label && <span className="chip yellow pt-mixup">Mix-up: {a.label}</span>}
               <p className="pt-mis-q">{a.q.stem}</p>
               <p>
                 <span className="pt-k">You said</span> <span className="pt-you">{a.response}</span>

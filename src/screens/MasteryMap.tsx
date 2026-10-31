@@ -93,7 +93,7 @@ export function MasteryMap() {
             <div className="stack pop-in" key={selected.id}>
               <span className={`chip ${sm.state === 'mastered' ? 'green' : sm.state === 'practicing' ? 'yellow' : ''}`}>{sm.state}</span>
               <h2 className="display">{selected.name}</h2>
-              <p>{selected.definition}</p>
+              {selected.definition && <p>{selected.definition}</p>}
               <ul className="crit">
                 <Crit ok={sm.correct >= MASTERY_RULE.correct} label={`Right ${MASTERY_RULE.correct} times`} have={`${Math.min(sm.correct, MASTERY_RULE.correct)}/${MASTERY_RULE.correct}`} />
                 <Crit ok={sm.days >= MASTERY_RULE.days} label={`On ${MASTERY_RULE.days} different days`} have={`${Math.min(sm.days, MASTERY_RULE.days)}/${MASTERY_RULE.days}`} />
@@ -162,15 +162,15 @@ function Appears({ conceptId }: { conceptId: string }) {
   const index = useDeckIndex();
   if (!index) return null;
   const qs = index.byConcept.get(conceptId) ?? [];
-  const runner = qs.filter((q) => q.type === 'mcq' && runnerFit(q)).length;
-  const slice = qs.filter((q) => q.type === 'slice').length;
-  const room = qs.filter((q) => q.type === 'order' || q.type === 'code' || q.type === 'explain' || (q.type === 'mcq' && q.format === 'scenario')).length;
+  const runner = qs.filter((q) => q.type === 'mcq' && q.games.includes('lane-runner') && runnerFit(q)).length;
+  const slice = new Set(qs.filter((q) => q.type === 'slice').map((q) => (q.type === 'slice' ? q.set : ''))).size;
+  const room = qs.filter((q) => q.games.some((g) => g === 'scenario-lock' || g === 'ordering-lock' || g === 'final-door')).length;
   return (
     <div className="appears">
       <span className="fb-label">Shows up in</span>
       <div className="row">
         <span className="chip">Lane Runner · {runner}</span>
-        <span className="chip">Fruit Slice · {slice}</span>
+        <span className="chip">Fruit Slice · {slice} round{slice === 1 ? '' : 's'}</span>
         <span className="chip">Escape Room · {room}</span>
       </div>
     </div>

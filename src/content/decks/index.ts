@@ -2,7 +2,7 @@
  * Deck registry. Any *.json file dropped in this folder is picked up
  * automatically and validated against the deck schema at load time.
  */
-import { DeckSchema, formatDeckErrors, type Deck } from '../schema';
+import { parseDeck, type Deck } from '../schema';
 
 export interface DeckLoadResult {
   file: string;
@@ -13,10 +13,9 @@ export interface DeckLoadResult {
 const raw = import.meta.glob<{ default: unknown }>('./*.json', { eager: true });
 
 export const deckResults: DeckLoadResult[] = Object.entries(raw)
-  .map(([path, mod]) => {
+  .map(([path, mod]): DeckLoadResult => {
     const file = path.replace('./', '');
-    const parsed = DeckSchema.safeParse(mod.default);
-    return parsed.success ? { file, deck: parsed.data } : { file, errors: formatDeckErrors(parsed.error) };
+    return { file, ...parseDeck(mod.default) };
   })
   // Real decks first, the placeholder sample last.
   .sort((a, b) => Number(!!a.deck?.placeholder) - Number(!!b.deck?.placeholder));

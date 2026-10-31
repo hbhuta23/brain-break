@@ -230,7 +230,8 @@ function Setup() {
               {d.title} {d.placeholder && <span className="chip yellow">placeholder</span>}
             </span>
             <span className="muted">
-              {d.description} · {d.questions.length} questions · {d.concepts.length} concepts
+              {d.description ? `${d.description} · ` : ''}
+              {d.questions.length} cards · {d.concepts.length} concepts · {d.topics.length} topics
             </span>
           </label>
         ))}

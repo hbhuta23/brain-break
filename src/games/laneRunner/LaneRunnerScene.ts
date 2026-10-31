@@ -365,6 +365,7 @@ export class LaneRunnerScene extends Phaser.Scene {
           chosen: option.text,
           correct: correct.text,
           misconception: option.misconception,
+          label: option.label,
           explanation: gate.item.explanation,
           source: gate.item.source,
         });
@@ -500,7 +501,8 @@ export class LaneRunnerScene extends Phaser.Scene {
 
       const txt = this.gateTexts[i];
       const [tx, ty] = this.project(x0 + panelW / 2, 0.78, z);
-      const scale = (w * 0.86) / 230;
+      // Fit by width, then shrink further if a long answer would overflow the panel height.
+      const scale = Math.min((w * 0.86) / 230, (h * 0.78) / Math.max(1, txt.height));
       txt.setPosition(tx, ty).setScale(scale).setAlpha(Math.min(1, alpha * 1.4));
     }
   }

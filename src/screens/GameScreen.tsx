@@ -88,30 +88,29 @@ export function GameScreen() {
         const correctOpt = item.options.find((o) => o.correct)!;
         if (mode !== 'practice') {
           const q = index?.question.get(item.cardId);
-          if (q) recordAnswer({ q, game: 'lane-runner', sessionId, correct: option.correct, response: option.text, rtMs, speed, misconception: option.misconception });
+          if (q) recordAnswer({ q, game: 'lane-runner', sessionId, correct: option.correct, response: option.text, rtMs, speed, misconception: option.label });
         }
         setResults((r) => [
           ...r,
           { cardId: item.cardId, concept: item.concept, conceptName: item.conceptName, prompt: item.stem, correct: option.correct, chosen: option.text, answer: correctOpt.text, explanation: item.explanation },
         ]);
       }),
-      bridge.on('slice:result', ({ item, target, sliced, correct, rtMs }) => {
+      bridge.on('slice:result', ({ item, setId, sliced, correct, rtMs }) => {
         const q = index?.question.get(item.cardId);
-        const targetName = index?.concept.get(target)?.name ?? target;
-        const misconception = correct ? undefined : sliced ? `Took ${item.conceptName} for ${targetName}` : `Didn't recognise ${targetName}`;
+        const prompt = index?.sortSet.get(setId)?.prompt ?? setId;
+        const misconception = correct ? undefined : sliced ? 'sliced a non-example' : 'missed an example';
         if (q) recordAnswer({ q, game: 'fruit-slice', sessionId, correct, response: sliced ? 'sliced' : 'let-fall', rtMs, misconception });
-        const isTarget = item.concept === target;
         setResults((r) => [
           ...r,
           {
             cardId: item.cardId,
             concept: item.concept,
             conceptName: item.conceptName,
-            prompt: item.text,
+            prompt: `${prompt}: "${item.text}"`,
             correct,
-            chosen: sliced ? `Sliced it as ${targetName}` : 'Let it fall',
-            answer: isTarget ? `Slice it: it's ${targetName}` : `Let it fall: it's ${item.conceptName}`,
-            explanation: item.explanation,
+            chosen: sliced ? 'Sliced it' : 'Let it fall',
+            answer: item.match ? 'Slice it' : 'Let it fall',
+            explanation: item.why,
           },
         ]);
       }),

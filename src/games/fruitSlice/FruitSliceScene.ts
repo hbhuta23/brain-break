@@ -203,12 +203,12 @@ export class FruitSliceScene extends Phaser.Scene {
     this.waveActive = true;
     this.emitStats();
     this.bridge.emit('slice:wave', { index: i, total: this.plan.waves.length, wave: w });
-    this.showBanner(`WAVE ${i + 1}`, `Slice: ${w.targetName}`, 1500);
+    this.showBanner(`WAVE ${i + 1}`, w.prompt, 1700);
     this.nextLaunchAt = this.time.now + 1900;
   }
 
-  private waveTarget() {
-    return this.plan.waves[this.wave].target;
+  private waveId() {
+    return this.plan.waves[this.wave].setId;
   }
 
   private endWave(outOfStrikes: boolean) {
@@ -225,9 +225,9 @@ export class FruitSliceScene extends Phaser.Scene {
       this.time.delayedCall(outOfStrikes ? 1400 : 500, () => {
         this.bridge.emit('feedback', {
           tone: 'missed',
-          title: `These were ${w.targetName}, and they fell`,
-          explanation: `${w.targetName}: ${w.targetDefinition}`,
-          items: missed.map((m) => ({ text: m.text, note: m.explanation })),
+          title: missed.length === 1 ? 'This one belonged, and it fell' : 'These belonged, and they fell',
+          explanation: w.explanation,
+          items: missed.map((m) => ({ text: m.text, note: m.why })),
         });
         this.scene.pause();
         this.time.delayedCall(250, next);
@@ -285,7 +285,7 @@ export class FruitSliceScene extends Phaser.Scene {
     const img = this.add.image(x, y, `fruit-${fruit}`).setScale(r / TEX_R).setDepth(3);
     const fl: Flyer = {
       item,
-      isTarget: item.concept === this.waveTarget(),
+      isTarget: item.match,
       fruit,
       img,
       tag,
@@ -323,7 +323,7 @@ export class FruitSliceScene extends Phaser.Scene {
     f.done = true;
     const rtMs = Math.round(this.time.now - f.bornAt);
     const correct = f.isTarget;
-    this.bridge.emit('slice:result', { item: f.item, target: this.waveTarget(), sliced: true, correct, rtMs });
+    this.bridge.emit('slice:result', { item: f.item, setId: this.waveId(), sliced: true, correct, rtMs });
 
     // Split into halves that fly apart perpendicular to the cut.
     const nx = -Math.sin(angle);
@@ -369,11 +369,10 @@ export class FruitSliceScene extends Phaser.Scene {
       f.tag.destroy();
       this.bridge.emit('feedback', {
         tone: 'wrong',
-        title: `That's not ${wave.targetName}`,
+        title: "That one doesn't belong",
         chosen: f.item.text,
-        correct: `This is an example of ${f.item.conceptName}.`,
-        misconception: f.item.explanation,
-        explanation: `${wave.targetName}: ${wave.targetDefinition}`,
+        misconception: f.item.why,
+        explanation: wave.explanation,
         source: f.item.source,
       });
       this.scene.pause();
@@ -397,7 +396,7 @@ export class FruitSliceScene extends Phaser.Scene {
     f.img.destroy();
     f.tag.destroy();
     const correct = !f.isTarget;
-    this.bridge.emit('slice:result', { item: f.item, target: this.waveTarget(), sliced: false, correct, rtMs: Math.round(this.time.now - f.bornAt) });
+    this.bridge.emit('slice:result', { item: f.item, setId: this.waveId(), sliced: false, correct, rtMs: Math.round(this.time.now - f.bornAt) });
     if (correct) return;
     this.strikes++;
     this.missedTargets.push(f.item);

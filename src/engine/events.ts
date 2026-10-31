@@ -6,17 +6,11 @@ import type { Bloom, Question } from '../content/schema';
 import type { GameId } from './leitner';
 
 /** Question "kind" for the mastery rule (needs 2+ different kinds). */
-export type QuestionKind = 'recall' | 'scenario' | 'slice' | 'order' | 'code' | 'explain';
+export type QuestionKind = 'recall' | 'scenario' | 'slice' | 'order' | 'explain';
 
 export function kindOf(q: Question): QuestionKind {
-  switch (q.type) {
-    case 'mcq':
-      return q.format === 'scenario' ? 'scenario' : 'recall';
-    case 'slice':
-      return 'slice';
-    default:
-      return q.type;
-  }
+  if (q.type === 'mcq') return q.format === 'scenario' ? 'scenario' : 'recall';
+  return q.type;
 }
 
 interface EventBase {

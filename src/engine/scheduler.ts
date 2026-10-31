@@ -9,15 +9,17 @@
  *   3. Everything else, soonest-due first, as extra practice.
  * Cards attempted in the last few minutes are held back, so a miss never
  * comes straight back in the same session.
+ *
+ * Which game a question can appear in comes from the deck's `games` field.
  */
 import type { DeckIndex } from '../content/deckIndex';
-import type { Mcq, Question, SliceItem } from '../content/schema';
+import type { Mcq, Question, SliceItem, SortSet } from '../content/schema';
 import { kindOf, type QuestionKind } from './events';
 import type { CardState, GameId } from './leitner';
 
 export const RECENT_MS = 10 * 60_000;
-/** Longest answer that fits on a Lane Runner gate. */
-export const GATE_MAX_CHARS = 40;
+/** Longest answer that fits on a Lane Runner gate (gate text wraps and shrinks to fit). */
+export const GATE_MAX_CHARS = 80;
 export const RUNNER_STEM_MAX = 170;
 
 export interface ConceptMiss {
@@ -47,7 +49,7 @@ export function tierOf(q: Question, game: GameId, ctx: ScheduleContext): Tier {
   return 3;
 }
 
-function rank(qs: Question[], game: GameId, ctx: ScheduleContext) {
+function rank<T extends Question>(qs: T[], game: GameId, ctx: ScheduleContext) {
   const order = new Map(ctx.index.deck.questions.map((q, i) => [q.id, i]));
   return qs
     .map((q) => ({ q, tier: tierOf(q, game, ctx), st: ctx.cards[q.id] }))
@@ -76,7 +78,7 @@ export interface RunnerFit {
   distractors: Mcq['distractors'];
 }
 
-/** Can this question be played on three gates? Returns the answer and two short-enough distractors. */
+/** Can this question be played on three gates? Returns the answer and two distractors that fit. */
 export function runnerFit(q: Mcq): RunnerFit | null {
   if (q.stem.length > RUNNER_STEM_MAX || q.answer.length > GATE_MAX_CHARS) return null;
   const short = q.distractors.filter((d) => d.text.length <= GATE_MAX_CHARS);
@@ -87,6 +89,9 @@ export function runnerFit(q: Mcq): RunnerFit | null {
 export interface RunnerOption {
   text: string;
   correct: boolean;
+  /** Short name of the mistaken idea behind a wrong option. */
+  label?: string;
+  /** Why the option is wrong. */
   misconception?: string;
 }
 
@@ -103,17 +108,21 @@ export interface RunnerItem {
 }
 
 export function runnerEligible(index: DeckIndex): Mcq[] {
-  return index.deck.questions.filter((q): q is Mcq => q.type === 'mcq' && runnerFit(q) !== null);
+  return index.deck.questions.filter((q): q is Mcq => q.type === 'mcq' && q.games.includes('lane-runner') && runnerFit(q) !== null);
 }
 
 export function pickRunnerItems(ctx: ScheduleContext, n: number): RunnerItem[] {
   const rng = ctx.rng ?? Math.random;
-  const ranked = rank(runnerEligible(ctx.index), 'lane-runner', ctx);
-  const chosen = ranked.slice(0, n).map((r) => r.q as Mcq);
+  const chosen = rank(runnerEligible(ctx.index), 'lane-runner', ctx)
+    .slice(0, n)
+    .map((r) => r.q);
   return shuffle(chosen, rng).map((q) => {
     const fit = runnerFit(q)!;
     const options: RunnerOption[] = shuffle(
-      [{ text: fit.answer, correct: true }, ...fit.distractors.map((d) => ({ text: d.text, correct: false, misconception: d.misconception }))],
+      [
+        { text: fit.answer, correct: true },
+        ...fit.distractors.map((d) => ({ text: d.text, correct: false, label: d.label, misconception: d.misconception })),
+      ],
       rng,
     );
     return {
@@ -137,76 +146,64 @@ export interface SliceTarget {
   concept: string;
   conceptName: string;
   text: string;
-  explanation: string;
+  /** Should this one be sliced? */
+  match: boolean;
+  /** Why it does or doesn't match the prompt. */
+  why: string;
   bloom: Question['bloom'];
   source: Question['source'];
 }
 
 export interface SliceWave {
-  target: string;
-  targetName: string;
-  targetDefinition: string;
+  setId: string;
+  prompt: string;
+  conceptName: string;
+  explanation: string;
   items: SliceTarget[];
 }
 
 export interface SlicePlan {
-  groupId: string;
-  groupTitle: string;
   waves: SliceWave[];
 }
 
 const TIER_WEIGHT: Record<Tier, number> = { 0: 4, 1: 3, 2: 2, 3: 0.5, 4: 0 };
 
-export function pickSlicePlan(ctx: ScheduleContext, waveCount = 3, perWave = 5): SlicePlan | null {
+/** Pick the most urgent sort sets, one per wave. */
+export function pickSlicePlan(ctx: ScheduleContext, waveCount = 3): SlicePlan | null {
   const rng = ctx.rng ?? Math.random;
   const { index } = ctx;
-  const items = index.deck.questions.filter((q): q is SliceItem => q.type === 'slice');
-  if (!items.length || !index.deck.sliceGroups.length) return null;
+  const sets = index.deck.sortSets.filter((s) => {
+    const first = index.question.get(s.itemIds[0]);
+    return first?.games.includes('fruit-slice');
+  });
+  if (!sets.length) return null;
 
-  // The group with the most urgent work wins.
-  const groupScore = (gid: string) =>
-    items.filter((i) => i.group === gid).reduce((s, i) => s + TIER_WEIGHT[tierOf(i, 'fruit-slice', ctx)], 0);
-  const group = [...index.deck.sliceGroups].sort((a, b) => groupScore(b.id) - groupScore(a.id))[0];
-  const groupItems = items.filter((i) => i.group === group.id);
-
-  // Targets: concepts with the most urgent items first, and no concept twice in a row.
-  const conceptUrgency = (c: string) => Math.min(...groupItems.filter((i) => i.concept === c).map((i) => tierOf(i, 'fruit-slice', ctx)));
-  const byUrgency = [...group.concepts].sort((a, b) => conceptUrgency(a) - conceptUrgency(b));
-  const targets: string[] = [];
-  for (let w = 0; w < waveCount; w++) targets.push(byUrgency[w % byUrgency.length]);
-
-  const used = new Set<string>();
-  const take = (pool: SliceItem[], k: number): SliceItem[] => {
-    const ranked = rank(pool, 'fruit-slice', ctx).map((r) => r.q as SliceItem);
-    const fresh = ranked.filter((q) => !used.has(q.id));
-    const picked = [...fresh, ...ranked.filter((q) => used.has(q.id))].slice(0, k);
-    picked.forEach((q) => used.add(q.id));
-    return picked;
+  const itemsOf = (s: SortSet) => s.itemIds.map((id) => index.question.get(id) as SliceItem);
+  const urgency = (s: SortSet) => {
+    const items = itemsOf(s);
+    return items.reduce((sum, it) => sum + TIER_WEIGHT[tierOf(it, 'fruit-slice', ctx)], 0) / items.length;
   };
+  const order = new Map(sets.map((s, i) => [s.id, i]));
+  const chosen = [...sets].sort((a, b) => urgency(b) - urgency(a) || order.get(a.id)! - order.get(b.id)!).slice(0, waveCount);
 
-  const toTarget = (q: SliceItem): SliceTarget => ({
-    cardId: q.id,
-    concept: q.concept,
-    conceptName: index.concept.get(q.concept)?.name ?? q.concept,
-    text: q.text,
-    explanation: q.explanation,
-    bloom: q.bloom,
-    source: q.source,
-  });
-
-  const waves = targets.map((target) => {
-    const nTargets = Math.max(2, Math.round(perWave * 0.45));
-    const hits = take(groupItems.filter((i) => i.concept === target), nTargets);
-    const lures = take(groupItems.filter((i) => i.concept !== target), perWave - hits.length);
-    return {
-      target,
-      targetName: index.concept.get(target)?.name ?? target,
-      targetDefinition: index.concept.get(target)?.definition ?? '',
-      items: shuffle([...hits, ...lures], rng).map(toTarget),
-    };
-  });
-
-  return { groupId: group.id, groupTitle: group.title, waves };
+  return {
+    waves: chosen.map((s) => ({
+      setId: s.id,
+      prompt: s.prompt,
+      conceptName: index.concept.get(s.concept)?.name ?? s.concept,
+      explanation: s.explanation,
+      items: shuffle(itemsOf(s), rng).map((q) => ({
+        cardId: q.id,
+        concept: q.concept,
+        conceptName: index.concept.get(q.concept)?.name ?? q.concept,
+        text: q.text,
+        match: q.match,
+        why: q.explanation,
+        bloom: q.bloom,
+        source: q.source,
+      })),
+    })),
+  };
 }
 
 // ---------------------------------------------------------------- Summary
@@ -221,7 +218,7 @@ export interface QueueSummary {
 
 export function queueSummary(ctx: ScheduleContext): QueueSummary {
   const runner = runnerEligible(ctx.index);
-  const slice = ctx.index.deck.questions.filter((q) => q.type === 'slice');
+  const slice = ctx.index.deck.questions.filter((q) => q.type === 'slice' && q.games.includes('fruit-slice'));
   const count = (qs: Question[], game: GameId, tiers: Tier[]) => qs.filter((q) => tiers.includes(tierOf(q, game, ctx))).length;
   return {
     dueRunner: count(runner, 'lane-runner', [0, 1]),

@@ -4,3 +4,7 @@ dist
 .DS_Store
 *.log
 coverage
+
+# Local-only course files
+docs/*.pdf
+docs/module1-deck-review.csv

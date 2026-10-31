@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react';
 import type { Bridge, BridgeEvents } from '../../games/shared/bridge';
 import type { SlicePlan } from '../../engine/scheduler';
 
-export function SliceHud({ bridge, plan, onQuit }: { bridge: Bridge; plan: SlicePlan; onQuit: () => void }) {
+/** "Slice every source of EXTRANEOUS load" -> ["Slice every", "source of EXTRANEOUS load"] */
+function splitPrompt(prompt: string): [string, string] {
+  const m = prompt.match(/^(slice (?:every|all|each)(?: example of)?)\s+(.*)$/i);
+  return m ? [m[1], m[2]] : ['', prompt];
+}
+
+export function SliceHud({ bridge, onQuit }: { bridge: Bridge; plan: SlicePlan; onQuit: () => void }) {
   const [wave, setWave] = useState<BridgeEvents['slice:wave'] | null>(null);
   const [stats, setStats] = useState<BridgeEvents['slice:stats']>({ score: 0, strikes: 0, combo: 0 });
 
@@ -42,10 +48,10 @@ export function SliceHud({ bridge, plan, onQuit }: { bridge: Bridge; plan: Slice
           <span className="sign-rope" aria-hidden="true" />
           <div className="sign-board">
             <span className="sign-small">
-              Wave {wave.index + 1}/{wave.total} · {plan.groupTitle}
+              Wave {wave.index + 1}/{wave.total} · {wave.wave.conceptName}
             </span>
-            <span className="sign-do">Slice every example of</span>
-            <span className="sign-target display">{wave.wave.targetName}</span>
+            {splitPrompt(wave.wave.prompt)[0] && <span className="sign-do">{splitPrompt(wave.wave.prompt)[0]}</span>}
+            <span className="sign-target display">{splitPrompt(wave.wave.prompt)[1]}</span>
           </div>
         </div>
       )}

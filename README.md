@@ -34,7 +34,7 @@ src/
   content/       deck schema (zod), deck registry, decks/*.json
   engine/        pure TypeScript, unit-tested
     leitner.ts     5-box Leitner schedule (0/1/2/4/7 days), squeezed before the exam date
-    scheduler.ts   which cards each game gets; misses come back in a *different* game
+    scheduler.ts   which cards each game gets (from each question's `games`); misses come back in a *different* game
     mastery.ts     criterion-referenced mastery: 3 correct, 2 days, 2 kinds, 1 apply-level
     events.ts      everything recorded for evaluation, plus CSV export
   store/         zustand + localStorage persistence
@@ -45,7 +45,7 @@ docs/
   TIMELINE.md      revised week-by-week plan
 ```
 
-**Adding a deck:** drop a JSON file in `src/content/decks/` and run
+**Adding a deck:** the Module 1 deck lives at `src/content/decks/module1.json`. Drop another JSON file there and run
 `npm run validate-deck`. See [docs/DECK_FORMAT.md](docs/DECK_FORMAT.md).
 
 **Demo tools:** spacing happens over days, so the top bar has *Skip a day*

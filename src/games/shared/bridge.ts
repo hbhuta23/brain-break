@@ -14,6 +14,8 @@ export interface Feedback {
   correct?: string;
   /** Why the chosen answer was wrong (written from the misconception). */
   misconception?: string;
+  /** Short name of the mistaken idea, e.g. "Forgetting is linear". */
+  label?: string;
   explanation: string;
   source?: { passage: string; ref: string };
   /** For a review of several items at once (Fruit Slice wave review). */
@@ -27,7 +29,7 @@ export interface BridgeEvents {
   'runner:answer': { item: RunnerItem; option: RunnerOption; rtMs: number; speed: number };
   'runner:stats': { streak: number; distance: number; correct: number; answered: number; speed: number; level: number };
   'slice:wave': { index: number; total: number; wave: SliceWave };
-  'slice:result': { item: SliceTarget; target: string; sliced: boolean; correct: boolean; rtMs: number };
+  'slice:result': { item: SliceTarget; setId: string; sliced: boolean; correct: boolean; rtMs: number };
   'slice:stats': { score: number; strikes: number; combo: number };
   feedback: Feedback;
   end: { reason: 'complete' | 'quit' | 'out-of-lives' };

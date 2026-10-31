@@ -1,0 +1,2248 @@
+{
+  "id": "cs6460-module1",
+  "title": "CS 6460 Module 1: Foundations of the Learning Sciences",
+  "version": "0.1.0",
+  "source": "Passages are short excerpts from Dr. Joyner's CS 6460 Module 1 lecture notes, cited by lesson and section.",
+  "gameTypes": {
+    "recall": "Lane Runner gates and Escape Room code locks (1 answer + 2 distractors)",
+    "sort": "Fruit Slice: slice items where match = true",
+    "scenario": "Escape Room scenario lock (1 answer + 3 distractors so hint 3 can remove two)",
+    "order": "Escape Room ordering lock: steps are stored in the correct order; shuffle before showing",
+    "explain": "Escape Room final door: free-text answer, self-scored against modelAnswer with the SOLO rubric"
+  },
+  "soloRubric": [
+    {
+      "level": "prestructural",
+      "score": 0,
+      "description": "Misses the point or restates the question"
+    },
+    {
+      "level": "unistructural",
+      "score": 1,
+      "description": "Gets one key idea right"
+    },
+    {
+      "level": "multistructural",
+      "score": 2,
+      "description": "Lists several key ideas without connecting them"
+    },
+    {
+      "level": "relational",
+      "score": 3,
+      "description": "Connects the key ideas into a coherent explanation"
+    },
+    {
+      "level": "extended-abstract",
+      "score": 4,
+      "description": "Connects the ideas and extends them to a new situation or principle"
+    }
+  ],
+  "topics": [
+    {
+      "id": "memory",
+      "title": "Memory & Cognitive Load",
+      "concepts": [
+        "forgetting-spacing",
+        "memory-architecture",
+        "working-memory-limits",
+        "cognitive-load"
+      ]
+    },
+    {
+      "id": "motivation",
+      "title": "Motivation",
+      "concepts": [
+        "self-determination",
+        "rewards-dark-patterns",
+        "expectancy-value",
+        "flow-interest",
+        "attribution-feedback",
+        "goal-orientation"
+      ]
+    },
+    {
+      "id": "constructivism",
+      "title": "Constructivism & Scaffolding",
+      "concepts": [
+        "constructivism-core",
+        "piaget",
+        "zpd-scaffolding",
+        "conceptual-change",
+        "guidance-debate",
+        "fading-hints"
+      ]
+    },
+    {
+      "id": "reinforcement",
+      "title": "Reinforcement (Behaviorism)",
+      "concepts": [
+        "reinforcement-punishment",
+        "behaviorist-foundations"
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "id": "p-mem-forgetting",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Cognitivism and Memory",
+      "text": "First, the forgetting curve showed that memory decays rapidly at first and then levels off—most of what we forget, we forget fast."
+    },
+    {
+      "id": "p-mem-spacing",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Cognitivism and Memory",
+      "text": "Second, the spacing effect showed that information is retained far better when study sessions are distributed over time than when they're crammed together."
+    },
+    {
+      "id": "p-mem-cramming",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Cognitivism and Memory",
+      "text": "His findings also quantified what many of us know intuitively: that the best way to study is a little at a time, spread out, with regular review—not a frantic cram the night before—although the forgetting curve does illustrate why cramming can seem effective, given that cramming might force all the information into that window before most of it will be forgotten."
+    },
+    {
+      "id": "p-mem-desirable-spacing",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Cognitivism and Memory",
+      "text": "The spacing effect is also our first real encounter with a desirable difficulty: studying this way feels harder and less efficient in the moment, which is exactly why it works. It forces us to specifically revisit things we have started to forget."
+    },
+    {
+      "id": "p-mem-nonsense",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Cognitivism and Memory",
+      "text": "He invented \"nonsense syllables\"—meaningless three-letter combinations like ZOF or BAK—specifically so that prior knowledge couldn't contaminate the results."
+    },
+    {
+      "id": "p-mem-multistore",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Cognitivism and Memory",
+      "text": "In 1968, Richard Atkinson and Richard Shiffrin proposed the influential \"multi-store\" model, which split memory into three stores: a fleeting sensory memory that holds raw perception for a fraction of a second, a limited short-term memory that holds what we're currently attending to, and a vast, durable long-term memory. Information flows from one store to the next—but only if it's attended to and rehearsed."
+    },
+    {
+      "id": "p-mem-miller-cowan",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Working Memory: The Bottleneck of Learning",
+      "text": "Miller observed that people can hold only about seven items in short-term memory at a time. … Later research, notably by Nelson Cowan in 2001, revised Miller's estimate downward, suggesting the real capacity is closer to four chunks—which only sharpens the design lesson: working memory is even more precious than we thought."
+    },
+    {
+      "id": "p-mem-chunking",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Working Memory: The Bottleneck of Learning",
+      "text": "But Miller's deeper insight was chunking: those seven \"items\" aren't fixed in size. A novice trying to remember a phone number juggles ten separate digits, but someone who recognizes an area code can bundle three digits into one chunk, freeing up capacity. Expertise, in large part, is the ability to chunk—to perceive large, meaningful units where a beginner sees a scatter of unrelated pieces."
+    },
+    {
+      "id": "p-mem-chess",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Working Memory: The Bottleneck of Learning",
+      "text": "This is exactly why a chess master can glance at a board and reproduce it perfectly while a novice can't: the master sees a few meaningful formations, not thirty individual pieces."
+    },
+    {
+      "id": "p-mem-baddeley",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Working Memory: The Bottleneck of Learning",
+      "text": "In their model, a \"central executive\" directs attention and coordinates two subsystems: a \"phonological loop\" for verbal and auditory information and a \"visuospatial sketchpad\" for visual and spatial information."
+    },
+    {
+      "id": "p-mem-channels",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Working Memory: The Bottleneck of Learning",
+      "text": "because the visual and verbal channels are partly separate, you can present complementary information through both at once—narration paired with a diagram—and effectively widen the bottleneck. Cram everything into one channel, like dense on-screen text read aloud verbatim, and instead you jam it."
+    },
+    {
+      "id": "p-mem-intrinsic",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Cognitive Load Theory",
+      "text": "First, intrinsic load is the inherent difficulty of the material itself—how many elements interact and must be held in mind simultaneously. Learning to translate a single vocabulary word is low in intrinsic load; learning to balance a chemical equation is high. We can manage intrinsic load by sequencing and segmenting material, but we shouldn't try to dump it onto the interface, because that interferes with the very learning we want."
+    },
+    {
+      "id": "p-mem-extraneous",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Cognitive Load Theory",
+      "text": "Extraneous load is cognitive load added by the design of the experience. Good experience design leads to low extraneous load. High extraneous load can come from clutter, confusing navigation, unnecessary animation, etc. It can also come from the learner's mental state: test anxiety, for instance, can be understood as extraneous load imposed by stress, eating up capacity that should be going to the problem."
+    },
+    {
+      "id": "p-mem-germane-goal",
+      "source": "Module 1 1.pdf",
+      "lesson": "Cognitivism",
+      "section": "Cognitive Load Theory",
+      "text": "Germane load is the productive effort that actually builds schemas—organizing information, connecting it to prior knowledge, constructing understanding. … The design goal that falls out of this is clear, and it'll guide much of what we do: manage intrinsic load through smart sequencing and minimize extraneous load through clean design, thereby freeing up working memory for germane load—the effort that actually produces learning."
+    },
+    {
+      "id": "p-intro-bjork",
+      "source": "Module 1: Introduction to Foundation Principles of Learning Sciences",
+      "lesson": "Module 1 Introduction",
+      "section": "Introduction",
+      "text": "In fact, Robert Bjork has a name for this whole idea — 'desirable difficulties'. These are difficulties that make learning feel slower in the moment but stick far better in the long run. I'm bringing up that term now because it's going to follow us through the entire course — it's the hidden logic behind spaced repetition and the testing effect."
+    },
+    {
+      "id": "p-mot-deci",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Self-Determination Theory",
+      "text": "The students who were paid solved fewer extra puzzles than those who did it for free. … Being rewarded for something they already enjoyed seemed to undermine their enjoyment."
+    },
+    {
+      "id": "p-mot-sdt-needs",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Self-Determination Theory",
+      "text": "Self-Determination Theory holds that people are most motivated when three basic psychological needs are met: autonomy, competence, and relatedness."
+    },
+    {
+      "id": "p-mot-sdt-continuum",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Self-Determination Theory",
+      "text": "At the far, controlled end is external regulation—doing something purely because it's reinforced, either by positive reward or by the absence of punishment. Then, a bit more internalized is introjected regulation, where you act out of guilt, anxiety, or to protect your ego; that's not as extrinsic as a pure reward, but it's not as intrinsic as doing something purely because you want to. Then even more internalized is identified regulation, which is doing something because you personally see its value; exercise is a common example of this, where for a lot of us the act of exercise isn't motivating, but the outcomes of exercise are motivating, so we do it anyway. And then on the fully intrinsic end of the spectrum is integrated regulation, which is where the activity aligns with who you understand yourself to be."
+    },
+    {
+      "id": "p-mot-autonomy",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Five Takeaways from Motivation",
+      "text": "Give learners meaningful choices and a clear rationale for the tasks they're doing—in other words, the opposite of the dreaded busywork. … Autonomy is the need most easily honored in software: we can let learners choose their path or pace or topic more easily than in a one-to-many classroom."
+    },
+    {
+      "id": "p-mot-evt",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Expectancy-Value Theory",
+      "text": "The theory says motivation depends on two core beliefs. Expectancy is the question, \"Can I succeed at this task?\" Value is the question, \"Do I care about this task, and is it worth my time?\""
+    },
+    {
+      "id": "p-mot-multiplicative",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Expectancy-Value Theory",
+      "text": "Crucially, the theory is multiplicative—if either expectancy or value drops near zero, motivation collapses regardless of the other. … Emphasizing the career importance of a skill to a learner with learned helplessness about the potential for their success is counterproductive."
+    },
+    {
+      "id": "p-mot-goal-orientation",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Goal Orientation Theory and Mindsets",
+      "text": "In chess, for example, an approach-oriented player would likely seek out tougher and tougher opponents, while an avoidance-oriented player would stick to opponents they're confident they can beat. … Performance-approach learner: \"I want to demonstrate how much I know.\" Performance-avoidance learner: \"I want to avoid looking dumb.\""
+    },
+    {
+      "id": "p-mot-attribution-axes",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Attribution Theory",
+      "text": "Weiner identified three axes along which we make these explanations: locus, stability, and controllability."
+    },
+    {
+      "id": "p-mot-attribution-healthy",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Attribution Theory",
+      "text": "locus is about internal vs. external causes, while controllability is about whether those causes can be changed. … The healthiest pattern attributes failure to controllable causes like effort and strategy and preparation because those can be changed over time."
+    },
+    {
+      "id": "p-mot-task-feedback",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "The Motivation Environment",
+      "text": "In these settings, feedback should focus on the task rather than the person. Task-focused feedback would be something like, \"Here's how to strengthen this argument\"; that feeds into a growth mindset because it connects to an improvable skill."
+    },
+    {
+      "id": "p-mot-flow",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Flow",
+      "text": "Csíkszentmihályi found that flow arises under three specific conditions: when the challenge of a task is finely balanced against the learner's skill, when goals are clear, and when feedback is immediate. He pictured this as a \"channel\" between anxiety and boredom. That channel rises diagonally, because as skill grows, the challenge must grow with it to keep you in flow."
+    },
+    {
+      "id": "p-mot-interest",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "The Motivation Environment",
+      "text": "Their model has four phases:\na fleeting triggered situational interest, one little spark that lights some curiosity\nmaintained situational interest, that spark sustained by a supportive task\nemerging individual interest, where the learner starts seeking out that interest voluntarily\nwell-developed individual interest, where a learner has a durable, self-sustaining motivation"
+    },
+    {
+      "id": "p-mot-overjustification",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Dark Patterns in Motivation",
+      "text": "Overjustification effect: excessive external rewards replace a learner's internal interest, so that the interest collapses once the reward disappears. … In their study, they recruited children that they observed drawing during free time. They then gave these students a reward for drawing. After the reward, they observed these students drawing less during free time than they had before. The reward had quietly converted play into work, and work requires extrinsic motivation to perform."
+    },
+    {
+      "id": "p-mot-dark-patterns",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Dark Patterns in Motivation",
+      "text": "Reward saturation: extrinsic rewards have to keep escalating to maintain the same engagement, which creates a cycle that's impossible to sustain. Shallow gamification: points and badges disconnected from meaningful progress can spike short-term activity while eroding long-term investment."
+    },
+    {
+      "id": "p-mot-leaderboard",
+      "source": "Module 1 1.pdf",
+      "lesson": "Motivation",
+      "section": "Dark Patterns in Motivation",
+      "text": "Goal orientation theory tells us exactly why: a performance-approach learner may thrive on the competition. A performance-avoidance learner will dodge it entirely. … I personally often like to offer optional competitive assignments so those who enjoy the competitive angle can participate, but those who don't can opt out. Competitive structure: a single leaderboard motivates a minority while discouraging or alienating much of the rest."
+    },
+    {
+      "id": "p-con-core",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Intro to Constructivism",
+      "text": "Specifically, it challenged the idea that the goal of learning was to copy the knowledge from one person’s head into another. Instead, it argued that knowledge is actively constructed, and so learning should be based on the idea of helping students construct knowledge."
+    },
+    {
+      "id": "p-con-misconception",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Constructivism and Misconceptions",
+      "text": "This is fundamentally different from a student believing that Toronto is the capital of Canada. That's an isolated fact; you can correct it with a sentence and it's fixed. … You can tell them the truth and they will nod, and then revert to the misconception the moment they face a real problem, because the words never displaced the model. You can't correct a mental model with a single sentence. You have to give the learner an experience that forces the model to change."
+    },
+    {
+      "id": "p-con-posner",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Constructivism and Misconceptions",
+      "text": "They argued that a learner only abandons an existing mental model when they become dissatisfied with it, and at that time they seek a new model that is intelligible, plausible, and more useful. In other words, you have to create that discomfort first; you have to make the student feel that their mental model is wrong, not just tell them that it's wrong."
+    },
+    {
+      "id": "p-con-piaget",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Piaget and Cognitive Constructivism",
+      "text": "In assimilation, we fit new experiences into our existing mental structures—the new information is consistent with what we already believe, so it slots right in. In accommodation, the new experience won't fit, so we're forced to reshape the structure itself to make room for it."
+    },
+    {
+      "id": "p-con-equilibration",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Piaget and Cognitive Constructivism",
+      "text": "Equilibration: The process of adjusting a mental model until it fits the current experiences or data. Disequilibrium: the sense that one's mental model does not currently match the available data or experiences."
+    },
+    {
+      "id": "p-con-zpd",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Vygotsky and Social Constructivism",
+      "text": "Zone of Proximal Development: the gap between what a learner can do alone and what they can do with support."
+    },
+    {
+      "id": "p-con-scaffolding",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Scaffolding and the Art of Fading Support",
+      "text": "The answer came in a 1976 paper by David Wood, Jerome Bruner, and Gail Ross, who contributed a term that fits the construction metaphor beautifully: scaffolding. … Scaffolding: temporary support that lets a learner reach beyond their current ability, removed as competence grows."
+    },
+    {
+      "id": "p-con-fading",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Scaffolding and the Art of Fading Support",
+      "text": "And here's the part designers most often get wrong: scaffolding that never fades isn't scaffolding anymore. A learning tool that gives the same level of hand-holding on problem one and problem one hundred has stopped teaching and started doing the work for the learner. Designing good support means designing its eventual removal from the very beginning."
+    },
+    {
+      "id": "p-con-software-scaffold",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Scaffolding and the Art of Fading Support",
+      "text": "but it also inherited Bruner's hardest problem, because software scaffolds are notoriously easy to leave permanently switched on. Fading is the part the technology tends to forget."
+    },
+    {
+      "id": "p-con-essay",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "Scaffolding and the Art of Fading Support",
+      "text": "A first-time essay writer is frequently handed a rigid structure: write five paragraphs; open with an introduction that ends in a thesis naming three points; devote each of the next three paragraphs to one of those points; tie them together in a conclusion. Early on, students might even fill out a worksheet that lays out each piece before they write a single word. Later, the worksheet disappears and they're simply reminded to include the pieces. Later still, even the reminder fades, and eventually we hope they've internalized the underlying logic well enough to break the five-paragraph rule deliberately and write something more sophisticated."
+    },
+    {
+      "id": "p-con-kirschner",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "The Limits of Constructivism",
+      "text": "Turned loose in a rich environment without guidance, a beginner's working memory gets overwhelmed by the sheer search space, and they often construct nothing useful—or worse, they construct new misconceptions. … What they're attacking is a specific instructional inference: that because learning is constructive, teaching should be unguided."
+    },
+    {
+      "id": "p-con-guidance",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructivism",
+      "section": "The Limits of Constructivism",
+      "text": "The authors are careful, though: they note that \"the advantage of guidance begins to recede only when learners have sufficiently high prior knowledge to provide internal guidance.\" In other words, guided instruction works best for novices, and open exploration becomes more valuable as expertise grows."
+    },
+    {
+      "id": "p-con-vs-constructionism",
+      "source": "Module 1 1.pdf",
+      "lesson": "Constructionism",
+      "section": "Constructionism vs Constructivism",
+      "text": "Constructivism is about constructing a mental model. Constructionism is about constructing an external artifact."
+    },
+    {
+      "id": "p-intro-hints",
+      "source": "Module 1: Introduction to Foundation Principles of Learning Sciences",
+      "lesson": "Module 1 Introduction",
+      "section": "Introduction",
+      "text": "One really fascinating area of literature is on help-seeking behaviors: researchers added hints to a popular math practicing tool, then monitored how students used those hints. They found a lot of students just grabbed all the hints at the beginning instead of waiting until they needed them, which hurt learning more than it helped. It sounds counterintuitive to say that sometimes we need to make it harder for students to get help, but sometimes that’s exactly what we have to do"
+    },
+    {
+      "id": "p-beh-reinforcement",
+      "source": "Module 1 1.pdf",
+      "lesson": "Behaviorism",
+      "section": "Operant Conditioning",
+      "text": "Positive reinforcement involves adding something good, like praise or food. Negative reinforcement involves removing something considered bad, like disabling a time limit on a device when a child has done their chores. … Reinforcement increases behavior; punishment decreases it. \"Negative\" means something is removed, not that it's bad."
+    },
+    {
+      "id": "p-beh-punishment",
+      "source": "Module 1 1.pdf",
+      "lesson": "Behaviorism",
+      "section": "Operant Conditioning",
+      "text": "Positive punishment means adding something bad, like an electric shock or extra chores. Negative punishment means removing something good, like taking away dessert when a child won't finish their dinner. … People especially often use \"negative reinforcement\" as if it's a punishment, and \"positive punishment\" almost sounds like an oxymoron."
+    },
+    {
+      "id": "p-beh-law-of-effect",
+      "source": "Module 1 1.pdf",
+      "lesson": "Behaviorism",
+      "section": "Thorndike and the Law of Effect",
+      "text": "Thorndike's Law of Effect: responses followed by satisfying consequences become more likely to recur, and responses followed by unpleasant consequences become less likely."
+    },
+    {
+      "id": "p-beh-variable-ratio",
+      "source": "Module 1 1.pdf",
+      "lesson": "Behaviorism",
+      "section": "Reinforcement Schedules",
+      "text": "But the most successful reinforcement schedule was variable-ratio schedules. Here, reinforcement comes after an unpredictable number of instances of the desired behavior. … It's the reinforcement schedule used to construct slot machines."
+    },
+    {
+      "id": "p-beh-teaching-machine",
+      "source": "Module 1 1.pdf",
+      "lesson": "Behaviorism",
+      "section": "Skinner's Teaching Machines",
+      "text": "Material was broken into very small steps, called frames. The student was active at every step, constructing a response rather than just reading. Feedback was immediate, so correct responses were reinforced instantly. And the sequence was engineered so that learners almost always answered correctly, keeping the reinforcement flowing and errors rare."
+    }
+  ],
+  "questions": [
+    {
+      "id": "mem-01",
+      "concept": "forgetting-spacing",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-forgetting",
+      "prompt": "According to Ebbinghaus's forgetting curve, how does memory decay?",
+      "answer": "Fast at first, then it levels off",
+      "distractors": [
+        {
+          "text": "Slowly at first, then all at once",
+          "misconception": "Forgetting is a cliff you fall off later",
+          "feedback": "It's the reverse: most forgetting happens early, which is why the first review should come soon."
+        },
+        {
+          "text": "At a steady rate over time",
+          "misconception": "Forgetting is linear",
+          "feedback": "The curve isn't a straight line. It drops steeply and then flattens out."
+        }
+      ],
+      "explanation": "Ebbinghaus found memory decays rapidly at first and then levels off: most of what we forget, we forget fast.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-02",
+      "concept": "forgetting-spacing",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-spacing",
+      "prompt": "Which effect says study sessions spread out over time beat cramming?",
+      "answer": "The spacing effect",
+      "distractors": [
+        {
+          "text": "The testing effect",
+          "misconception": "Spacing and testing are the same idea",
+          "feedback": "Testing is about retrieving from memory. Spacing is about when you study: distributed vs. crammed."
+        },
+        {
+          "text": "Chunking",
+          "misconception": "Any memory term fits",
+          "feedback": "Chunking is grouping items into meaningful units. It's about capacity, not timing."
+        }
+      ],
+      "explanation": "The spacing effect: information is retained far better when study sessions are distributed over time than when they're crammed together.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-03",
+      "concept": "forgetting-spacing",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-nonsense",
+      "prompt": "Why did Ebbinghaus memorize nonsense syllables like ZOF and BAK?",
+      "answer": "So prior knowledge couldn't contaminate the results",
+      "distractors": [
+        {
+          "text": "Because nonsense syllables are easier to memorize",
+          "misconception": "Meaningless material is easier",
+          "feedback": "Meaningless items are harder to remember. He used them to remove the help of prior knowledge."
+        },
+        {
+          "text": "To study how children learn language",
+          "misconception": "Confusing Ebbinghaus with language research",
+          "feedback": "He tested himself, not children. The point was a clean measure of memory."
+        }
+      ],
+      "explanation": "Nonsense syllables meant nothing to him, so existing knowledge couldn't help him remember them, giving a cleaner measure of memory.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-04",
+      "concept": "memory-architecture",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-multistore",
+      "prompt": "Atkinson and Shiffrin's multi-store model has which three stores?",
+      "answer": "Sensory, short-term, and long-term memory",
+      "distractors": [
+        {
+          "text": "Phonological loop, visuospatial sketchpad, central executive",
+          "misconception": "Mixing up multi-store with Baddeley & Hitch",
+          "feedback": "Those are the parts of Baddeley and Hitch's working memory model, a refinement of short-term memory."
+        },
+        {
+          "text": "Encoding, storage, and retrieval",
+          "misconception": "Processes are stores",
+          "feedback": "Those are processes the mind performs, not the places the model says memory lives."
+        }
+      ],
+      "explanation": "Sensory memory holds raw perception briefly, short-term memory holds what we're attending to, and long-term memory is vast and durable.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-05",
+      "concept": "working-memory-limits",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": true,
+      "passage": "p-mem-miller-cowan",
+      "prompt": "Current research (Cowan, 2001) puts working memory capacity at about…",
+      "answer": "Four chunks",
+      "distractors": [
+        {
+          "text": "Seven, plus or minus two",
+          "misconception": "Miller's 1956 estimate is still the accepted number",
+          "feedback": "That was Miller's original estimate. Cowan revised it down to about four chunks."
+        },
+        {
+          "text": "Unlimited, as long as items are chunked",
+          "misconception": "Chunking removes the limit",
+          "feedback": "Chunking makes each slot hold more, but the number of slots is still small."
+        }
+      ],
+      "explanation": "Cowan revised Miller's estimate downward to about four chunks, which makes working memory even more precious for designers.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-06",
+      "concept": "memory-architecture",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-baddeley",
+      "prompt": "In Baddeley and Hitch's model, which part handles verbal and auditory information?",
+      "answer": "The phonological loop",
+      "distractors": [
+        {
+          "text": "The visuospatial sketchpad",
+          "misconception": "Swapping the two subsystems",
+          "feedback": "The sketchpad handles visual and spatial information. The loop handles verbal and auditory."
+        },
+        {
+          "text": "Sensory memory",
+          "misconception": "Mixing in the multi-store model",
+          "feedback": "Sensory memory is from Atkinson and Shiffrin's model, not a part of working memory."
+        }
+      ],
+      "explanation": "A central executive directs attention and coordinates two subsystems: the phonological loop (verbal/auditory) and the visuospatial sketchpad (visual/spatial).",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-07",
+      "concept": "cognitive-load",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-intrinsic",
+      "prompt": "Which type of cognitive load is the inherent difficulty of the material itself?",
+      "answer": "Intrinsic load",
+      "distractors": [
+        {
+          "text": "Extraneous load",
+          "misconception": "All difficulty is extraneous",
+          "feedback": "Extraneous load comes from the design of the experience, not from the material."
+        },
+        {
+          "text": "Germane load",
+          "misconception": "Germane means 'related to the material'",
+          "feedback": "Germane load is the productive effort of building schemas, not the material's built-in difficulty."
+        }
+      ],
+      "explanation": "Intrinsic load depends on how many elements interact and must be held in mind at once: low for one vocabulary word, high for balancing a chemical equation.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-08",
+      "concept": "working-memory-limits",
+      "type": "recall",
+      "bloom": "Understand",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-chunking",
+      "prompt": "What is chunking?",
+      "answer": "Bundling several items into one meaningful unit",
+      "distractors": [
+        {
+          "text": "Splitting a lesson into small parts",
+          "misconception": "Chunking = segmenting instruction",
+          "feedback": "Splitting lessons up is segmenting, a designer's move. Chunking happens in the learner's memory."
+        },
+        {
+          "text": "Repeating items until they stick",
+          "misconception": "Chunking = rehearsal",
+          "feedback": "Repetition is rehearsal. Chunking is grouping, like seeing an area code as one unit."
+        }
+      ],
+      "explanation": "Someone who recognizes an area code can bundle three digits into one chunk, freeing up working memory capacity.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-09",
+      "concept": "cognitive-load",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-mem-extraneous",
+      "prompt": "Slice every source of EXTRANEOUS load",
+      "items": [
+        {
+          "text": "A cluttered screen full of decorative animations",
+          "match": true,
+          "why": "Clutter and unnecessary animation are classic extraneous load."
+        },
+        {
+          "text": "A confusing navigation menu",
+          "match": true,
+          "why": "Confusing navigation is load added by design, not by the content."
+        },
+        {
+          "text": "Test anxiety eating up working memory",
+          "match": true,
+          "why": "The notes treat test anxiety as extraneous load imposed by stress."
+        },
+        {
+          "text": "The many interacting parts of a chemical equation",
+          "match": false,
+          "why": "That's intrinsic load: the difficulty built into the material."
+        },
+        {
+          "text": "Connecting a new idea to what you already know",
+          "match": false,
+          "why": "That's germane load: productive effort that builds schemas."
+        },
+        {
+          "text": "Narration paired with a diagram",
+          "match": false,
+          "why": "Using both channels for complementary information widens the bottleneck instead of adding load."
+        }
+      ],
+      "explanation": "Extraneous load is added by the design of the experience or the learner's mental state. It's the enemy, and reducing it is most of good learning-interface design.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-10",
+      "concept": "forgetting-spacing",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-intro-bjork",
+      "prompt": "Slice every DESIRABLE DIFFICULTY",
+      "items": [
+        {
+          "text": "Spreading review sessions over several days",
+          "match": true,
+          "why": "Spacing feels slower now but sticks far better later."
+        },
+        {
+          "text": "Quizzing yourself instead of rereading",
+          "match": true,
+          "why": "The testing effect is one of the desirable difficulties Bjork's idea explains."
+        },
+        {
+          "text": "Revisiting things you've started to forget",
+          "match": true,
+          "why": "That's exactly why spacing works: it forces retrieval of fading memories."
+        },
+        {
+          "text": "Hunting through a confusing menu to find the quiz",
+          "match": false,
+          "why": "This difficulty comes from the interface, not the content, so it doesn't build learning."
+        },
+        {
+          "text": "Tiny, low-contrast text that's hard to read",
+          "match": false,
+          "why": "This is extraneous load. Difficulty should be tied to the content, not the interface."
+        }
+      ],
+      "explanation": "Desirable difficulties make learning feel slower in the moment but stick better in the long run, and the difficulty must come from the content.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-11",
+      "concept": "memory-architecture",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-mem-baddeley",
+      "prompt": "Slice every part of WORKING MEMORY (Baddeley & Hitch)",
+      "items": [
+        {
+          "text": "Central executive",
+          "match": true,
+          "why": "Directs attention and coordinates the two subsystems."
+        },
+        {
+          "text": "Phonological loop",
+          "match": true,
+          "why": "Handles verbal and auditory information."
+        },
+        {
+          "text": "Visuospatial sketchpad",
+          "match": true,
+          "why": "Handles visual and spatial information."
+        },
+        {
+          "text": "A vast, durable store",
+          "match": false,
+          "why": "That describes long-term memory."
+        },
+        {
+          "text": "Holds raw perception for a fraction of a second",
+          "match": false,
+          "why": "That describes sensory memory."
+        }
+      ],
+      "explanation": "Baddeley and Hitch reframed short-term memory as an active workspace: a central executive plus a phonological loop and a visuospatial sketchpad.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-12",
+      "concept": "memory-architecture",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-channels",
+      "prompt": "A tutorial app shows a dense paragraph on screen while a narrator reads the exact same paragraph aloud. What's the problem?",
+      "answer": "It crams the same verbal information into one channel instead of pairing complementary words and visuals",
+      "distractors": [
+        {
+          "text": "Nothing—presenting the same thing two ways always helps",
+          "misconception": "Redundancy always helps",
+          "feedback": "The notes say dense on-screen text read aloud verbatim jams the channel instead of widening it."
+        },
+        {
+          "text": "The audio overloads the visuospatial sketchpad",
+          "misconception": "Audio is visual",
+          "feedback": "Narration goes through the phonological loop. The issue is that both versions are verbal."
+        },
+        {
+          "text": "The narration should be removed entirely; audio never helps learning",
+          "misconception": "Audio is always a distraction",
+          "feedback": "Narration paired with a diagram helps. The problem is duplicating text, not using audio."
+        }
+      ],
+      "explanation": "Because visual and verbal channels are partly separate, narration plus a complementary diagram widens the bottleneck. Text read aloud verbatim jams one channel.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-13",
+      "concept": "forgetting-spacing",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": true,
+      "passage": "p-mem-cramming",
+      "prompt": "Sam crams the night before a quiz, does fine the next morning, and remembers almost nothing a week later. What best explains why cramming seemed to work?",
+      "answer": "The quiz fell inside the window before most of the material was forgotten",
+      "distractors": [
+        {
+          "text": "Cramming is a form of spacing, so it built lasting memories",
+          "misconception": "Any studying counts as spacing",
+          "feedback": "Cramming is the opposite of spacing: everything is massed into one session."
+        },
+        {
+          "text": "Cramming builds chunks that last longer",
+          "misconception": "Chunking explains cramming",
+          "feedback": "Chunking is about grouping, not timing. Sam's memory faded because nothing was spaced."
+        },
+        {
+          "text": "Sam actually learned it well; the later quiz was just harder",
+          "misconception": "Short-term success = learning",
+          "feedback": "Doing well the next morning doesn't mean it was learned. The forgetting curve predicts the drop a week later."
+        }
+      ],
+      "explanation": "The forgetting curve shows why cramming can seem effective: it forces information into the window before most of it is forgotten, but it doesn't last.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-14",
+      "concept": "cognitive-load",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-intrinsic",
+      "prompt": "You need to teach a topic where many elements interact at once. What does cognitive load theory recommend?",
+      "answer": "Sequence and segment the material, and keep the interface clean",
+      "distractors": [
+        {
+          "text": "Show all the elements at once so learners see the whole picture",
+          "misconception": "Seeing everything at once helps understanding",
+          "feedback": "That overloads working memory, which can only hold a few elements at a time."
+        },
+        {
+          "text": "Add animations and sound effects to keep learners engaged",
+          "misconception": "Engaging extras reduce load",
+          "feedback": "Unnecessary animation adds extraneous load and leaves less room for learning."
+        },
+        {
+          "text": "Cut the hard parts out of the content",
+          "misconception": "Reduce intrinsic load by removing content",
+          "feedback": "You manage intrinsic load by sequencing it, not by deleting what needs to be learned."
+        }
+      ],
+      "explanation": "Manage intrinsic load through smart sequencing and minimize extraneous load through clean design, freeing working memory for germane load.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-15",
+      "concept": "working-memory-limits",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": true,
+      "passage": "p-mem-chess",
+      "prompt": "A chess master and a novice each glance at a mid-game board for five seconds. The master rebuilds it perfectly; the novice can't. Why?",
+      "answer": "The master sees a few meaningful formations instead of thirty separate pieces",
+      "distractors": [
+        {
+          "text": "The master has a larger working memory capacity",
+          "misconception": "Experts have bigger working memories",
+          "feedback": "Capacity is about the same. Experts fit more into each chunk."
+        },
+        {
+          "text": "The master has a photographic memory",
+          "misconception": "Expertise is a special memory talent",
+          "feedback": "Memory isn't a camera. The master's advantage comes from knowledge organized into chunks."
+        },
+        {
+          "text": "The master spent more time rehearsing that exact board",
+          "misconception": "Expertise is rehearsal of specific items",
+          "feedback": "Both saw the board for five seconds. The difference is how it was chunked."
+        }
+      ],
+      "explanation": "Expertise is largely the ability to chunk: perceiving large, meaningful units where a beginner sees scattered pieces.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-16",
+      "concept": "memory-architecture",
+      "type": "order",
+      "bloom": "Understand",
+      "games": [
+        "ordering-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mem-multistore",
+      "prompt": "Put the path of information through the multi-store model in order",
+      "steps": [
+        "A stimulus arrives from the environment",
+        "Sensory memory holds the raw perception for a fraction of a second",
+        "Information you attend to enters short-term memory",
+        "Information you rehearse is stored in long-term memory"
+      ],
+      "explanation": "Information flows from one store to the next only if it's attended to and rehearsed. Otherwise it's lost.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-17",
+      "concept": "forgetting-spacing",
+      "type": "explain",
+      "bloom": "Analyze",
+      "games": [
+        "final-door"
+      ],
+      "pretest": false,
+      "passage": "p-mem-desirable-spacing",
+      "prompt": "In two or three sentences, explain why spacing out your studying counts as a 'desirable difficulty'.",
+      "modelAnswer": "Spacing makes studying feel harder and less efficient in the moment because you have to pull back things you've started to forget. That effortful retrieval is exactly what makes the memory last, so the difficulty pays off in long-term retention instead of just feeling productive.",
+      "keyIdeas": [
+        "Spacing feels harder or slower in the moment",
+        "It forces you to revisit material you've started to forget",
+        "That effort leads to better long-term retention",
+        "Ease in the moment is not the same as learning"
+      ],
+      "explanation": "Studying this way feels harder and less efficient in the moment, which is exactly why it works.",
+      "topic": "memory"
+    },
+    {
+      "id": "mem-18",
+      "concept": "cognitive-load",
+      "type": "explain",
+      "bloom": "Apply",
+      "games": [
+        "final-door"
+      ],
+      "pretest": false,
+      "passage": "p-mem-germane-goal",
+      "prompt": "In two or three sentences, explain how a learning app could reduce extraneous load without making the content easier. Give an example.",
+      "modelAnswer": "The app should remove load that comes from its design, like clutter, confusing navigation or flashy animation, while keeping the content's real difficulty. For example, a quiz screen that shows only the question, the choices and one clear button frees working memory for thinking about the concept, so more capacity goes to germane load.",
+      "keyIdeas": [
+        "Extraneous load comes from design, not content",
+        "A concrete example of removing clutter, confusing navigation or unnecessary animation",
+        "Intrinsic difficulty is kept (managed by sequencing, not removed)",
+        "Freed working memory goes to germane, schema-building effort"
+      ],
+      "explanation": "Manage intrinsic load through sequencing, minimize extraneous load through clean design, and free working memory for germane load.",
+      "topic": "memory"
+    },
+    {
+      "id": "mot-01",
+      "concept": "self-determination",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-sdt-needs",
+      "prompt": "Self-Determination Theory's three basic psychological needs are…",
+      "answer": "Autonomy, competence, relatedness",
+      "distractors": [
+        {
+          "text": "Attention, relevance, confidence",
+          "misconception": "Mixing up SDT with ARCS",
+          "feedback": "Those are three of Keller's ARCS levers, a different (though related) model."
+        },
+        {
+          "text": "Expectancy, value, cost",
+          "misconception": "Mixing up SDT with expectancy-value theory",
+          "feedback": "Those come from expectancy-value theory. SDT is about needs, not beliefs about a task."
+        }
+      ],
+      "explanation": "Deci and Ryan: people are most motivated when autonomy, competence and relatedness are all met.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-02",
+      "concept": "rewards-dark-patterns",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": true,
+      "passage": "p-mot-deci",
+      "prompt": "In Deci's 1971 puzzle study, students who were paid for solving puzzles later…",
+      "answer": "Solved fewer extra puzzles in their free time",
+      "distractors": [
+        {
+          "text": "Solved more extra puzzles in their free time",
+          "misconception": "Rewards always increase motivation",
+          "feedback": "The surprising result was the opposite: the reward undermined their interest."
+        },
+        {
+          "text": "Solved the same number as unpaid students",
+          "misconception": "Rewards don't affect intrinsic motivation",
+          "feedback": "There was a real difference. Paid students did fewer puzzles once the pay stopped."
+        }
+      ],
+      "explanation": "Being rewarded for something they already enjoyed seemed to undermine their enjoyment. That finding launched Self-Determination Theory.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-03",
+      "concept": "expectancy-value",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-evt",
+      "prompt": "In expectancy-value theory, 'expectancy' is the question…",
+      "answer": "\"Can I succeed at this task?\"",
+      "distractors": [
+        {
+          "text": "\"Is this task worth my time?\"",
+          "misconception": "Swapping expectancy and value",
+          "feedback": "That's the value question. Expectancy is about whether you think you can succeed."
+        },
+        {
+          "text": "\"What must I give up to do this?\"",
+          "misconception": "Expectancy = cost",
+          "feedback": "That's cost, which works against value."
+        }
+      ],
+      "explanation": "Expectancy: 'Can I succeed?' Value: 'Do I care, and is it worth my time?'",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-04",
+      "concept": "expectancy-value",
+      "type": "recall",
+      "bloom": "Understand",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": true,
+      "passage": "p-mot-multiplicative",
+      "prompt": "Expectancy-value theory is 'multiplicative.' What does that mean?",
+      "answer": "If either expectancy or value is near zero, motivation collapses",
+      "distractors": [
+        {
+          "text": "Very high value can make up for very low expectancy",
+          "misconception": "Motivation is additive",
+          "feedback": "That would be additive. Multiplying by near-zero gives near-zero, no matter how big the other number is."
+        },
+        {
+          "text": "Motivation grows each time a task is repeated",
+          "misconception": "Multiplicative = compounding over time",
+          "feedback": "It's about how the two beliefs combine, not about repetition."
+        }
+      ],
+      "explanation": "It doesn't matter how important a task seems if a learner thinks they can't succeed, and vice versa.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-05",
+      "concept": "flow-interest",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-flow",
+      "prompt": "A skilled player breezes through every level of a learning game and starts zoning out. According to flow theory, what's happening and what should the game do?",
+      "answer": "Challenge has fallen below skill (boredom), so the game should raise the challenge",
+      "distractors": [
+        {
+          "text": "The player is in flow; the game should keep everything the same",
+          "misconception": "Easy = flow",
+          "feedback": "Flow needs challenge balanced against skill. Zoning out is a sign of boredom."
+        },
+        {
+          "text": "The player is anxious; the game should lower the difficulty",
+          "misconception": "Mixing up anxiety and boredom",
+          "feedback": "Anxiety comes from challenge above skill. Here the challenge is too low."
+        },
+        {
+          "text": "The game should add bigger rewards for each level",
+          "misconception": "Rewards create flow",
+          "feedback": "Flow comes from balanced challenge, clear goals and immediate feedback, not escalating rewards."
+        }
+      ],
+      "explanation": "The flow channel rises diagonally: as skill grows, challenge must grow with it, or the learner drifts into boredom.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-06",
+      "concept": "rewards-dark-patterns",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-overjustification",
+      "prompt": "Which dark pattern is it when external rewards replace a learner's own interest?",
+      "answer": "The overjustification effect",
+      "distractors": [
+        {
+          "text": "Reward saturation",
+          "misconception": "Mixing up the two reward traps",
+          "feedback": "Reward saturation is when rewards must keep escalating to hold the same engagement."
+        },
+        {
+          "text": "Shallow gamification",
+          "misconception": "All reward problems are gamification",
+          "feedback": "Shallow gamification is points and badges disconnected from real progress."
+        }
+      ],
+      "explanation": "Overjustification: excessive external rewards replace internal interest, so the interest collapses once the reward disappears.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-07",
+      "concept": "attribution-feedback",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-attribution-axes",
+      "prompt": "Weiner's attribution theory explains results along which three axes?",
+      "answer": "Locus, stability, controllability",
+      "distractors": [
+        {
+          "text": "Mastery, performance, valence",
+          "misconception": "Mixing up attribution with goal orientation",
+          "feedback": "Those describe goal orientation theory's 2×2, not how people explain results."
+        },
+        {
+          "text": "Autonomy, competence, relatedness",
+          "misconception": "Mixing up attribution with SDT",
+          "feedback": "Those are SDT's basic needs."
+        }
+      ],
+      "explanation": "Locus: internal vs. external. Stability: will it persist? Controllability: can the cause be changed?",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-08",
+      "concept": "self-determination",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-mot-autonomy",
+      "prompt": "Slice every design choice that supports AUTONOMY",
+      "items": [
+        {
+          "text": "Letting learners choose which game to play",
+          "match": true,
+          "why": "A meaningful choice is the core of autonomy."
+        },
+        {
+          "text": "Letting learners set their own pace",
+          "match": true,
+          "why": "Choosing path, pace or topic is autonomy honored in software."
+        },
+        {
+          "text": "Explaining why a task matters before it starts",
+          "match": true,
+          "why": "A clear rationale is the opposite of busywork and supports autonomy."
+        },
+        {
+          "text": "A public leaderboard everyone must appear on",
+          "match": false,
+          "why": "Forced competition is controlling, not autonomy-supporting."
+        },
+        {
+          "text": "Badges for logging in every day",
+          "match": false,
+          "why": "That's an external reward, which pulls toward the controlled end of the continuum."
+        },
+        {
+          "text": "Sending a deck to a friend",
+          "match": false,
+          "why": "That supports relatedness, not autonomy."
+        }
+      ],
+      "explanation": "Autonomy is the need most easily honored in software: let learners choose their path, pace or topic, and give a clear rationale.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-09",
+      "concept": "rewards-dark-patterns",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-mot-dark-patterns",
+      "prompt": "Slice every DARK PATTERN",
+      "items": [
+        {
+          "text": "Points and badges that don't reflect real progress",
+          "match": true,
+          "why": "Shallow gamification spikes short-term activity and erodes long-term investment."
+        },
+        {
+          "text": "Rewards that must keep getting bigger to hold attention",
+          "match": true,
+          "why": "Reward saturation creates a cycle that's impossible to sustain."
+        },
+        {
+          "text": "Paying learners for something they already enjoy doing",
+          "match": true,
+          "why": "The overjustification effect can turn play into work."
+        },
+        {
+          "text": "Feedback that explains why an answer was wrong",
+          "match": false,
+          "why": "Informative feedback supports competence. It isn't a manipulation."
+        },
+        {
+          "text": "An optional competitive mode learners can skip",
+          "match": false,
+          "why": "Making competition opt-in avoids alienating learners who don't want it."
+        }
+      ],
+      "explanation": "Dark patterns appear to work short-term but target external regulation instead of autonomy, competence and relatedness.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-10",
+      "concept": "attribution-feedback",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-mot-task-feedback",
+      "prompt": "Slice every piece of TASK-FOCUSED feedback",
+      "items": [
+        {
+          "text": "\"Here's how to strengthen this argument.\"",
+          "match": true,
+          "why": "Points to an improvable skill, which feeds a growth mindset."
+        },
+        {
+          "text": "\"You missed the day-1 terms; try reviewing those first.\"",
+          "match": true,
+          "why": "Names a controllable strategy, not a trait."
+        },
+        {
+          "text": "\"Check the definition of 'locus' before your next try.\"",
+          "match": true,
+          "why": "Focused on what to do with the task."
+        },
+        {
+          "text": "\"You're a strong writer.\"",
+          "match": false,
+          "why": "Person-focused praise treats ability as fixed."
+        },
+        {
+          "text": "\"You're just a natural at this.\"",
+          "match": false,
+          "why": "Attributes success to a stable trait instead of effort or strategy."
+        }
+      ],
+      "explanation": "Feedback should focus on the task, not the person, so learners attribute results to things they can change.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-11",
+      "concept": "attribution-feedback",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-attribution-healthy",
+      "prompt": "After failing a quiz, Jordan says: \"I'm just bad at this. I always will be, and nothing I do will change it.\" How would attribution theory classify this?",
+      "answer": "Internal, stable, uncontrollable",
+      "distractors": [
+        {
+          "text": "External, unstable, controllable",
+          "misconception": "Flipping all three axes",
+          "feedback": "Jordan blames himself (internal), expects it to last (stable) and sees no way to change it (uncontrollable)."
+        },
+        {
+          "text": "Internal, unstable, controllable",
+          "misconception": "Internal blame is always the healthy pattern",
+          "feedback": "Internal is right, but 'always will be' is stable and 'nothing I do' is uncontrollable."
+        },
+        {
+          "text": "External, stable, uncontrollable",
+          "misconception": "Mixing up locus and controllability",
+          "feedback": "Locus is about where the cause sits. 'I'm bad at this' puts it inside Jordan."
+        }
+      ],
+      "explanation": "This is the least healthy pattern. Attributional retraining aims to shift failures toward controllable causes like effort and strategy.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-12",
+      "concept": "goal-orientation",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": true,
+      "passage": "p-mot-goal-orientation",
+      "prompt": "Priya only plays chess against opponents she's sure she can beat, because she doesn't want anyone to see her lose. Which goal orientation fits best?",
+      "answer": "Performance-avoidance",
+      "distractors": [
+        {
+          "text": "Mastery-approach",
+          "misconception": "Practicing a lot = mastery",
+          "feedback": "A mastery-approach player would seek tougher opponents to build skill."
+        },
+        {
+          "text": "Performance-approach",
+          "misconception": "Any focus on others' views is 'approach'",
+          "feedback": "Performance-approach seeks chances to show off. Priya is avoiding a visible loss."
+        },
+        {
+          "text": "Mastery-avoidance",
+          "misconception": "Any avoidance is mastery-avoidance",
+          "feedback": "Mastery-avoidance is about not losing a skill. Priya's concern is how she looks to others."
+        }
+      ],
+      "explanation": "An avoidance-oriented player sticks to opponents they can beat. Worrying about being seen losing makes it performance-avoidance: 'I want to avoid looking dumb.'",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-13",
+      "concept": "expectancy-value",
+      "type": "scenario",
+      "bloom": "Analyze",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-multiplicative",
+      "prompt": "Maya knows statistics matters for her career but is convinced she could never pass the course. Which belief should a designer target first?",
+      "answer": "Expectancy—help her see she can succeed",
+      "distractors": [
+        {
+          "text": "Value—remind her how important statistics is for her career",
+          "misconception": "More value fixes any motivation problem",
+          "feedback": "She already values it. The notes call stressing career importance to someone who expects to fail counterproductive."
+        },
+        {
+          "text": "Cost—give her more free time",
+          "misconception": "Cost is always the bottleneck",
+          "feedback": "Lowering cost won't help if she believes success is impossible."
+        },
+        {
+          "text": "None—motivation is fixed, so nothing will help",
+          "misconception": "Motivation is a fixed trait",
+          "feedback": "Motivation varies by task and over time, and design can change both beliefs."
+        }
+      ],
+      "explanation": "The designer's job is to diagnose which belief is missing. Here value is high and expectancy is near zero, so expectancy is the lever.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-14",
+      "concept": "rewards-dark-patterns",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-overjustification",
+      "prompt": "Children who love drawing in their free time start getting a reward for each drawing. Based on Lepper, Greene and Nisbett's study, what happens after the rewards stop?",
+      "answer": "They draw less in their free time than before",
+      "distractors": [
+        {
+          "text": "They draw more, because the reward built a habit",
+          "misconception": "Rewards build lasting habits",
+          "feedback": "The study found the opposite: the reward turned play into work."
+        },
+        {
+          "text": "Nothing changes, because they already loved drawing",
+          "misconception": "Intrinsic motivation can't be undermined",
+          "feedback": "That's exactly what overjustification shows: existing interest can be undermined."
+        },
+        {
+          "text": "They draw the same amount but with lower quality",
+          "misconception": "Rewards only affect quality",
+          "feedback": "The measured change was how much they chose to draw, which dropped."
+        }
+      ],
+      "explanation": "Rewarding something a learner already does for free can backfire: the reward quietly converts play into work.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-15",
+      "concept": "self-determination",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-sdt-continuum",
+      "prompt": "Leo doesn't enjoy going to the gym, but he goes because he personally values being healthy. Where is this on the SDT continuum?",
+      "answer": "Identified regulation",
+      "distractors": [
+        {
+          "text": "External regulation",
+          "misconception": "Not enjoying it = purely external",
+          "feedback": "No one is rewarding or punishing him. He sees the value himself."
+        },
+        {
+          "text": "Introjected regulation",
+          "misconception": "Any 'should' is introjected",
+          "feedback": "Introjected regulation is driven by guilt, anxiety or ego, not by valuing the outcome."
+        },
+        {
+          "text": "Integrated regulation",
+          "misconception": "Valuing something = integrated",
+          "feedback": "Integrated means the activity is part of who he is. Leo values the result, not the activity."
+        }
+      ],
+      "explanation": "Identified regulation is doing something because you see its value. The lecture uses exercise as the classic example.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-16",
+      "concept": "flow-interest",
+      "type": "order",
+      "bloom": "Understand",
+      "games": [
+        "ordering-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-interest",
+      "prompt": "Put Hidi and Renninger's four phases of interest in order",
+      "steps": [
+        "Triggered situational interest",
+        "Maintained situational interest",
+        "Emerging individual interest",
+        "Well-developed individual interest"
+      ],
+      "explanation": "You don't have to create passion on day one: trigger curiosity, then build the supports that let it mature.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-17",
+      "concept": "self-determination",
+      "type": "order",
+      "bloom": "Understand",
+      "games": [
+        "ordering-lock"
+      ],
+      "pretest": false,
+      "passage": "p-mot-sdt-continuum",
+      "prompt": "Order these types of regulation from most controlled to most internalized",
+      "steps": [
+        "External regulation",
+        "Introjected regulation",
+        "Identified regulation",
+        "Integrated regulation"
+      ],
+      "explanation": "The further along this continuum a learner moves, the more self-sustaining and resilient their motivation becomes.",
+      "topic": "motivation"
+    },
+    {
+      "id": "mot-18",
+      "concept": "goal-orientation",
+      "type": "explain",
+      "bloom": "Analyze",
+      "games": [
+        "final-door"
+      ],
+      "pretest": false,
+      "passage": "p-mot-leaderboard",
+      "prompt": "In two or three sentences, use goal orientation theory to explain why a single public leaderboard might motivate some learners and push others away.",
+      "modelAnswer": "A performance-approach learner wants to show what they know, so a leaderboard gives them exactly that. A performance-avoidance learner wants to avoid looking bad, so they'll steer clear, and mastery-oriented learners mostly don't care. One leaderboard therefore motivates a minority and alienates the rest, so making competition optional is safer.",
+      "keyIdeas": [
+        "Performance-approach learners are motivated by competition",
+        "Performance-avoidance learners avoid it",
+        "Mastery-oriented learners tend not to care",
+        "Conclusion: a single leaderboard helps a minority, so make it optional"
+      ],
+      "explanation": "A single leaderboard motivates a minority while discouraging or alienating much of the rest.",
+      "topic": "motivation"
+    },
+    {
+      "id": "con-01",
+      "concept": "constructivism-core",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-core",
+      "prompt": "According to constructivism, knowledge is…",
+      "answer": "Actively constructed by the learner",
+      "distractors": [
+        {
+          "text": "Copied from the teacher's head into the student's",
+          "misconception": "Learning is file transfer",
+          "feedback": "That's exactly the traditional model constructivism challenged."
+        },
+        {
+          "text": "Best discovered with no guidance at all",
+          "misconception": "Constructivism means unguided discovery",
+          "feedback": "That's an instructional leap critics attack. Constructivism itself is about how learning happens, not a ban on guidance."
+        }
+      ],
+      "explanation": "Constructivism argues knowledge is actively constructed, so teaching should help students build it rather than transmit it.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-02",
+      "concept": "piaget",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-piaget",
+      "prompt": "In Piaget's terms, fitting a new experience into an existing mental structure is…",
+      "answer": "Assimilation",
+      "distractors": [
+        {
+          "text": "Accommodation",
+          "misconception": "Swapping assimilation and accommodation",
+          "feedback": "Accommodation is when the experience won't fit, so the structure itself has to change."
+        },
+        {
+          "text": "Equilibration",
+          "misconception": "Equilibration is any kind of fitting",
+          "feedback": "Equilibration is the overall process of adjusting a model until it fits, driven by disequilibrium."
+        }
+      ],
+      "explanation": "Assimilate when you can (new info slots in), accommodate when you must (reshape the structure).",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-03",
+      "concept": "piaget",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-equilibration",
+      "prompt": "What is disequilibrium?",
+      "answer": "The sense that your mental model doesn't match what you're seeing",
+      "distractors": [
+        {
+          "text": "Reshaping a mental model to fit new experience",
+          "misconception": "Disequilibrium = accommodation",
+          "feedback": "That's accommodation, one way of resolving disequilibrium."
+        },
+        {
+          "text": "The process of adjusting a model until it fits",
+          "misconception": "Disequilibrium = equilibration",
+          "feedback": "That's equilibration. Disequilibrium is the discomfort that drives it."
+        }
+      ],
+      "explanation": "Disequilibrium is productive confusion: the moment a learner is most ready to rebuild their model.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-04",
+      "concept": "zpd-scaffolding",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-zpd",
+      "prompt": "Vygotsky's Zone of Proximal Development is…",
+      "answer": "The gap between what a learner can do alone and what they can do with support",
+      "distractors": [
+        {
+          "text": "What a learner can already do entirely on their own",
+          "misconception": "ZPD = current ability",
+          "feedback": "That's the region below the zone. Teaching there bores the learner."
+        },
+        {
+          "text": "What a learner can't do even with help",
+          "misconception": "ZPD = anything too hard",
+          "feedback": "That's the region above the zone. Aiming there loses the learner."
+        }
+      ],
+      "explanation": "Teaching does its real work in the middle zone, and the zone moves as the learner grows.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-05",
+      "concept": "zpd-scaffolding",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": true,
+      "passage": "p-con-scaffolding",
+      "prompt": "Who introduced the term 'scaffolding' for learning support?",
+      "answer": "Wood, Bruner and Ross (1976)",
+      "distractors": [
+        {
+          "text": "Lev Vygotsky",
+          "misconception": "Vygotsky coined 'scaffolding'",
+          "feedback": "A very common mix-up. Vygotsky gave us the ZPD; the term scaffolding came later from Wood, Bruner and Ross."
+        },
+        {
+          "text": "Jean Piaget",
+          "misconception": "Any constructivist idea comes from Piaget",
+          "feedback": "Piaget gave us assimilation, accommodation and equilibration, not scaffolding."
+        }
+      ],
+      "explanation": "Wood, Bruner and Ross studied tutors helping children build with blocks: step in when stuck, pull back as the child gets it.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-06",
+      "concept": "conceptual-change",
+      "type": "recall",
+      "bloom": "Understand",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-posner",
+      "prompt": "According to Posner and colleagues, a learner abandons a mental model when…",
+      "answer": "They become dissatisfied with it",
+      "distractors": [
+        {
+          "text": "A teacher clearly states the correct model",
+          "misconception": "Telling is enough",
+          "feedback": "You have to make students feel their model is wrong, not just tell them it's wrong."
+        },
+        {
+          "text": "They read the correct definition several times",
+          "misconception": "Repetition replaces a model",
+          "feedback": "Rereading the right answer doesn't create the dissatisfaction that conceptual change needs."
+        }
+      ],
+      "explanation": "First create dissatisfaction, then offer a new model that is intelligible, plausible and more useful.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-07",
+      "concept": "constructivism-core",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": true,
+      "passage": "p-con-vs-constructionism",
+      "prompt": "Constructionism (with a TION) is about constructing…",
+      "answer": "An external artifact",
+      "distractors": [
+        {
+          "text": "A mental model",
+          "misconception": "Constructivism and constructionism are the same",
+          "feedback": "That's constructivism (TIV). Constructionism adds building something out in the world."
+        },
+        {
+          "text": "A shared social agreement",
+          "misconception": "Constructionism = social constructivism",
+          "feedback": "Social knowledge-building is Vygotsky's social constructivism, a different idea."
+        }
+      ],
+      "explanation": "Constructivism = constructing a mental model. Constructionism = constructing an external artifact, which drives the internal understanding.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-08",
+      "concept": "guidance-debate",
+      "type": "recall",
+      "bloom": "Understand",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-kirschner",
+      "prompt": "What were Kirschner, Sweller and Clark (2006) actually attacking?",
+      "answer": "The idea that because learning is constructive, teaching should be unguided",
+      "distractors": [
+        {
+          "text": "The idea that learners build their own mental models",
+          "misconception": "Their paper refutes constructivism",
+          "feedback": "They'd agree learners build models. They attacked an instructional inference, not the theory."
+        },
+        {
+          "text": "Explicit, structured teaching",
+          "misconception": "They were against direct instruction",
+          "feedback": "The reverse: their argument supports guidance for novices."
+        }
+      ],
+      "explanation": "Novices without guidance get overwhelmed by the search space and may build new misconceptions.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-09",
+      "concept": "zpd-scaffolding",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-con-scaffolding",
+      "prompt": "Slice every example of SCAFFOLDING",
+      "items": [
+        {
+          "text": "A worksheet that lays out each part of an essay before writing",
+          "match": true,
+          "why": "Temporary structure that lets a beginner do what they couldn't alone."
+        },
+        {
+          "text": "A hint offered at the moment a learner gets stuck",
+          "match": true,
+          "why": "Just-in-time support inside the zone of proximal development."
+        },
+        {
+          "text": "Scratch's snap-together blocks for a first-time coder",
+          "match": true,
+          "why": "The notes call these carefully designed constraints that keep open-ended building productive."
+        },
+        {
+          "text": "The same three hints on problem 1 and problem 100",
+          "match": false,
+          "why": "Scaffolding that never fades isn't scaffolding anymore."
+        },
+        {
+          "text": "A final exam with no support",
+          "match": false,
+          "why": "That's assessment of independent performance, the opposite of support."
+        }
+      ],
+      "explanation": "Scaffolding is temporary support that lets a learner reach beyond their current ability and is removed as competence grows.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-10",
+      "concept": "piaget",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-con-piaget",
+      "prompt": "Slice every example of ACCOMMODATION",
+      "items": [
+        {
+          "text": "A child realizes the moon isn't actually following them and rethinks how motion works",
+          "match": true,
+          "why": "The old model couldn't fit, so the child reshaped it."
+        },
+        {
+          "text": "Students watch heavy and light balls land together and rebuild their idea of falling",
+          "match": true,
+          "why": "The contradiction forced the structure itself to change."
+        },
+        {
+          "text": "A student decides the falling-balls demo must be a trick and keeps their old belief",
+          "match": false,
+          "why": "That's protecting the model by assimilating, the reason misconceptions persist."
+        },
+        {
+          "text": "A new restaurant visit that matches what you expected",
+          "match": false,
+          "why": "It fits your existing schema, so it's assimilation."
+        },
+        {
+          "text": "Learning one more example of a concept you already understand",
+          "match": false,
+          "why": "New info slots right in, which is assimilation."
+        }
+      ],
+      "explanation": "Accommodation reshapes the structure when new experience won't fit. Assimilation slots consistent experience into what's already there.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-11",
+      "concept": "constructivism-core",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-con-vs-constructionism",
+      "prompt": "Slice every example of CONSTRUCTIONISM",
+      "items": [
+        {
+          "text": "A kid builds a robot and finds the battery can't power the wheels",
+          "match": true,
+          "why": "Building an external artifact exposes the gap in their model."
+        },
+        {
+          "text": "Students design their own game in Scratch",
+          "match": true,
+          "why": "A shareable artifact, built by the learner."
+        },
+        {
+          "text": "A player builds an elaborate world in Minecraft",
+          "match": true,
+          "why": "The notes give Minecraft building as constructionism."
+        },
+        {
+          "text": "A student revises their mental model after a surprising demo",
+          "match": false,
+          "why": "That's constructivism: an internal model change with no artifact built."
+        },
+        {
+          "text": "Reading a chapter and highlighting key terms",
+          "match": false,
+          "why": "Nothing external is being made."
+        }
+      ],
+      "explanation": "Constructionism is learning through making something real, shareable and external.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-12",
+      "concept": "fading-hints",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-fading",
+      "prompt": "A tutoring app gives exactly the same step-by-step hints on the first problem and the hundredth. What's missing?",
+      "answer": "Fading—support should decrease as the learner gets better",
+      "distractors": [
+        {
+          "text": "Nothing; consistent support is good scaffolding",
+          "misconception": "Scaffolding is permanent support",
+          "feedback": "Scaffolding that never fades isn't scaffolding. It ends up doing the work for the learner."
+        },
+        {
+          "text": "It should give more hints on later problems",
+          "misconception": "Later problems always need more help",
+          "feedback": "As competence grows, support should come down, not go up."
+        },
+        {
+          "text": "It needs a leaderboard so learners compete",
+          "misconception": "Motivation fixes a scaffolding problem",
+          "feedback": "The issue is support that never fades, not motivation."
+        }
+      ],
+      "explanation": "Designing good support means designing its removal from the start, and fading is the part software tends to forget.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-13",
+      "concept": "conceptual-change",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": true,
+      "passage": "p-con-misconception",
+      "prompt": "A teacher tells the class that heavy and light objects fall at the same rate. Students nod, then predict the heavy one lands first on the next problem. Why?",
+      "answer": "It's a mental model, not an isolated fact; words alone don't replace it",
+      "distractors": [
+        {
+          "text": "They just need to hear it a few more times",
+          "misconception": "Repetition fixes misconceptions",
+          "feedback": "You can't correct a mental model with a sentence, repeated or not. They need an experience that forces it to change."
+        },
+        {
+          "text": "It's an isolated fact, so one correction should have worked",
+          "misconception": "All wrong beliefs are isolated facts",
+          "feedback": "An isolated fact (like Toronto as the capital) is fixed with a sentence. This belief is woven into a model they've confirmed through experience."
+        },
+        {
+          "text": "The students weren't paying attention",
+          "misconception": "Misconceptions come from inattention",
+          "feedback": "They heard and agreed. The old model came back when they had to use it."
+        }
+      ],
+      "explanation": "Give learners an experience that creates dissatisfaction, like dropping both balls and watching them land together.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-14",
+      "concept": "fading-hints",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-intro-hints",
+      "prompt": "Researchers found many students opened every hint at the start of a problem, and they learned less. What's the best design response?",
+      "answer": "Make hints available only after the learner has tried or been stuck for a while",
+      "distractors": [
+        {
+          "text": "Show all hints up front so no one gets stuck",
+          "misconception": "More help is always better",
+          "feedback": "That's what hurt learning: the struggle is where the learning happens."
+        },
+        {
+          "text": "Remove hints entirely",
+          "misconception": "Any help harms learning",
+          "feedback": "Support still matters inside the ZPD. The problem was when and how easily hints were used."
+        },
+        {
+          "text": "Reward students with points for each hint they open",
+          "misconception": "Incentivize help-seeking",
+          "feedback": "That would encourage the very behavior that hurt learning."
+        }
+      ],
+      "explanation": "Sometimes we need to make it a bit harder to get help, so learners struggle with the content first.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-15",
+      "concept": "guidance-debate",
+      "type": "scenario",
+      "bloom": "Analyze",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-guidance",
+      "prompt": "A complete beginner and an experienced student are both dropped into an open simulation with no instructions. What does the research predict?",
+      "answer": "The beginner struggles more; guidance helps novices most and matters less as expertise grows",
+      "distractors": [
+        {
+          "text": "Both learn best this way, since knowledge is constructed",
+          "misconception": "Constructivism means everyone should discover",
+          "feedback": "That's the inference Kirschner, Sweller and Clark attacked. Novices get overwhelmed."
+        },
+        {
+          "text": "The beginner does better because they have no misconceptions yet",
+          "misconception": "Novices are blank slates",
+          "feedback": "Novices lack the schemas to navigate the search space, and may build new misconceptions."
+        },
+        {
+          "text": "Guidance helps both of them equally",
+          "misconception": "Guidance has a fixed benefit",
+          "feedback": "The advantage of guidance recedes as prior knowledge grows (the expertise reversal idea)."
+        }
+      ],
+      "explanation": "Strong guidance early, fading to open exploration later: the advantage of guidance recedes once learners have enough prior knowledge.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-16",
+      "concept": "zpd-scaffolding",
+      "type": "order",
+      "bloom": "Understand",
+      "games": [
+        "ordering-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-essay",
+      "prompt": "Put the stages of the essay-writing scaffold in order",
+      "steps": [
+        "Students get a rigid five-paragraph structure",
+        "Students fill out a worksheet laying out each piece before writing",
+        "The worksheet disappears; students are just reminded to include the pieces",
+        "Even the reminder fades",
+        "Students break the five-paragraph rule on purpose to write something more sophisticated"
+      ],
+      "explanation": "The structure was never the goal: it was scaffolding, and it fades as the learner internalizes how arguments work.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-17",
+      "concept": "conceptual-change",
+      "type": "order",
+      "bloom": "Understand",
+      "games": [
+        "ordering-lock"
+      ],
+      "pretest": false,
+      "passage": "p-con-posner",
+      "prompt": "Put the steps of conceptual change (Posner et al.) in order",
+      "steps": [
+        "The learner holds an existing mental model",
+        "An experience contradicts what the model predicts",
+        "The learner becomes dissatisfied with the model",
+        "The learner adopts a new model that is intelligible, plausible and more useful"
+      ],
+      "explanation": "Dissatisfaction has to come first. Only then does the learner seek a better model.",
+      "topic": "constructivism"
+    },
+    {
+      "id": "con-18",
+      "concept": "fading-hints",
+      "type": "explain",
+      "bloom": "Analyze",
+      "games": [
+        "final-door"
+      ],
+      "pretest": false,
+      "passage": "p-con-software-scaffold",
+      "prompt": "In two or three sentences, explain why scaffolding in a learning app needs to fade, and why software often gets this wrong.",
+      "modelAnswer": "Scaffolding is temporary support that lets learners do what they can't yet do alone, so it should shrink as they get better. If the same help stays on forever, the tool ends up doing the work for the learner. Software gets this wrong because it's easy to leave a hint system switched on permanently instead of designing its removal from the start.",
+      "keyIdeas": [
+        "Scaffolding is temporary support within the ZPD",
+        "Support should decrease as competence grows",
+        "Permanent support does the work for the learner",
+        "Software scaffolds are easy to leave switched on; fading must be designed in"
+      ],
+      "explanation": "Fading is the part the technology tends to forget (Quintana, Soloway and colleagues).",
+      "topic": "constructivism"
+    },
+    {
+      "id": "beh-01",
+      "concept": "reinforcement-punishment",
+      "type": "recall",
+      "bloom": "Understand",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": true,
+      "passage": "p-beh-reinforcement",
+      "prompt": "Negative reinforcement means…",
+      "answer": "Removing something unpleasant to make a behavior more likely",
+      "distractors": [
+        {
+          "text": "Punishing a behavior to make it less likely",
+          "misconception": "Negative reinforcement = punishment",
+          "feedback": "The most common mix-up. Reinforcement always increases a behavior; 'negative' just means something is removed."
+        },
+        {
+          "text": "Adding something unpleasant after a behavior",
+          "misconception": "'Negative' means 'bad'",
+          "feedback": "Adding something bad to reduce a behavior is positive punishment."
+        }
+      ],
+      "explanation": "Reinforcement increases behavior; punishment decreases it. 'Negative' means something is removed, not that it's bad.",
+      "topic": "reinforcement"
+    },
+    {
+      "id": "beh-02",
+      "concept": "reinforcement-punishment",
+      "type": "sort",
+      "bloom": "Understand",
+      "games": [
+        "fruit-slice"
+      ],
+      "pretest": false,
+      "passage": "p-beh-reinforcement",
+      "prompt": "Slice every example of NEGATIVE REINFORCEMENT",
+      "items": [
+        {
+          "text": "Turning off a device time limit once chores are done",
+          "match": true,
+          "why": "Something unpleasant is removed to make doing chores more likely."
+        },
+        {
+          "text": "An app stops sending nag reminders once you finish today's review",
+          "match": true,
+          "why": "Removing the annoying reminder encourages finishing the review."
+        },
+        {
+          "text": "Taking away dessert when a child won't finish dinner",
+          "match": false,
+          "why": "Removing something good to reduce a behavior is negative punishment."
+        },
+        {
+          "text": "Assigning extra chores for breaking a rule",
+          "match": false,
+          "why": "Adding something bad to reduce a behavior is positive punishment."
+        },
+        {
+          "text": "Praising a correct answer",
+          "match": false,
+          "why": "Adding something good is positive reinforcement."
+        }
+      ],
+      "explanation": "Ask two questions: is something added or removed (positive/negative)? Is the goal to increase or decrease the behavior (reinforcement/punishment)?",
+      "topic": "reinforcement"
+    },
+    {
+      "id": "beh-03",
+      "concept": "behaviorist-foundations",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-beh-law-of-effect",
+      "prompt": "Thorndike's Law of Effect says…",
+      "answer": "Responses followed by satisfying consequences become more likely",
+      "distractors": [
+        {
+          "text": "Pairing a neutral signal with food makes the signal trigger a response",
+          "misconception": "Law of Effect = classical conditioning",
+          "feedback": "That's Pavlov's classical conditioning, which deals with involuntary responses."
+        },
+        {
+          "text": "Learning happens even without any reinforcement",
+          "misconception": "Law of Effect = latent learning",
+          "feedback": "That's Tolman's latent learning, a challenge to behaviorism."
+        }
+      ],
+      "explanation": "Thorndike's puzzle boxes (escape rooms for cats) showed successful actions getting faster while useless ones dropped away.",
+      "topic": "reinforcement"
+    },
+    {
+      "id": "beh-04",
+      "concept": "behaviorist-foundations",
+      "type": "recall",
+      "bloom": "Remember",
+      "games": [
+        "lane-runner",
+        "code-lock"
+      ],
+      "pretest": false,
+      "passage": "p-beh-variable-ratio",
+      "prompt": "Slot machines use which reinforcement schedule?",
+      "answer": "Variable-ratio",
+      "distractors": [
+        {
+          "text": "Fixed-ratio",
+          "misconception": "Slot machines pay on a set count",
+          "feedback": "Fixed-ratio rewards after a set number of responses. Slot machines are unpredictable."
+        },
+        {
+          "text": "Fixed-interval",
+          "misconception": "Slot machines pay on a timer",
+          "feedback": "Fixed-interval rewards the first response after a set time, not after an unpredictable number of plays."
+        }
+      ],
+      "explanation": "Variable-ratio rewards come after an unpredictable number of responses, which is the most powerful schedule and a classic dark-pattern risk.",
+      "topic": "reinforcement"
+    },
+    {
+      "id": "beh-05",
+      "concept": "reinforcement-punishment",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-beh-punishment",
+      "prompt": "A teacher gives a student detention every time they talk during the lesson, to stop the talking. What is this?",
+      "answer": "Positive punishment",
+      "distractors": [
+        {
+          "text": "Negative reinforcement",
+          "misconception": "Negative reinforcement = punishment",
+          "feedback": "Reinforcement increases a behavior. Detention is meant to decrease talking."
+        },
+        {
+          "text": "Negative punishment",
+          "misconception": "Anything unpleasant is 'negative'",
+          "feedback": "Negative punishment removes something good. Detention adds something unpleasant."
+        },
+        {
+          "text": "Positive reinforcement",
+          "misconception": "'Positive' means any consequence",
+          "feedback": "Positive reinforcement adds something good to increase a behavior."
+        }
+      ],
+      "explanation": "Something unpleasant is added (positive) to decrease a behavior (punishment).",
+      "topic": "reinforcement"
+    },
+    {
+      "id": "beh-06",
+      "concept": "behaviorist-foundations",
+      "type": "scenario",
+      "bloom": "Apply",
+      "games": [
+        "scenario-lock"
+      ],
+      "pretest": false,
+      "passage": "p-beh-teaching-machine",
+      "prompt": "An app shows one small question at a time, makes you answer each one, gives instant feedback, and is designed so you almost always get it right. Which tradition does this come from?",
+      "answer": "Skinner's programmed instruction",
+      "distractors": [
+        {
+          "text": "Papert's constructionism",
+          "misconception": "Any interactive tech is constructionist",
+          "feedback": "Constructionism is about building an external artifact, not answering small framed questions."
+        },
+        {
+          "text": "Unguided discovery learning",
+          "misconception": "Interactive = discovery",
+          "feedback": "This is highly structured and guided, the opposite of discovery."
+        },
+        {
+          "text": "Vygotsky's social constructivism",
+          "misconception": "Feedback implies a more knowledgeable other",
+          "feedback": "Social constructivism emphasizes dialogue and collaboration. This design comes from operant conditioning."
+        }
+      ],
+      "explanation": "Small frames, active responses, immediate feedback and a high success rate: Skinner's teaching machines, the ancestor of today's quiz apps.",
+      "topic": "reinforcement"
+    }
+  ]
+}

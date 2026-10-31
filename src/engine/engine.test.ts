@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import sample from '../content/decks/sample.json';
-import { DeckSchema } from '../content/schema';
+import fixture from './__fixtures__/deck.json';
+import { RawDeckSchema, normalizeDeck, nameFromId } from '../content/schema';
 import { indexDeck } from '../content/deckIndex';
 import { dayNumber, isoToDay, dayToIso, relativeDay } from './clock';
 import { review, placeFromPretest, BOX_INTERVALS, type CardState } from './leitner';
@@ -9,7 +9,7 @@ import type { AnswerEvent } from './events';
 import { eventsToCsv } from './events';
 import { pickRunnerItems, pickSlicePlan, tierOf, runnerFit, RECENT_MS, type ScheduleContext } from './scheduler';
 
-const deck = DeckSchema.parse(sample);
+const deck = normalizeDeck(RawDeckSchema.parse(fixture));
 const index = indexDeck(deck);
 const T = 20_000; // arbitrary day number
 const NOW = 1_800_000_000_000;
@@ -104,57 +104,78 @@ describe('mastery', () => {
   });
 });
 
+describe('deck normalization', () => {
+  it('names concepts from ids unless the deck gives a name', () => {
+    expect(index.concept.get('alpha')?.name).toBe('Alpha');
+    expect(index.concept.get('beta')?.name).toBe('Beta concept');
+    expect(nameFromId('zpd-scaffolding')).toBe('ZPD scaffolding');
+  });
+  it('expands sort sets into one card per fruit', () => {
+    const set = index.sortSet.get('sort-alpha')!;
+    expect(set.itemIds).toHaveLength(5);
+    const item = index.question.get(set.itemIds[0]);
+    expect(item?.type).toBe('slice');
+  });
+  it('resolves passages into sources and lowercases bloom', () => {
+    const q = index.question.get('scen-1')!;
+    expect(q.source).toEqual({ passage: 'Passage text', ref: 'Lesson › Section' });
+    expect(q.bloom).toBe('apply');
+  });
+  it('rejects a question pointing at a missing passage', () => {
+    const bad = structuredClone(fixture);
+    bad.questions[0].passage = 'nope';
+    expect(RawDeckSchema.safeParse(bad).success).toBe(false);
+  });
+});
+
 describe('scheduler', () => {
   const ctx = (over: Partial<ScheduleContext> = {}): ScheduleContext => ({
     index, cards: {}, conceptMiss: {}, today: T, nowTs: NOW, rng: seeded(), ...over,
   });
 
-  it('only gives Lane Runner questions that fit on gates', () => {
-    const items = pickRunnerItems(ctx(), 8);
-    expect(items).toHaveLength(8);
+  it('only gives Lane Runner questions tagged for it that fit on gates', () => {
+    const items = pickRunnerItems(ctx(), 20);
+    expect(items.map((i) => i.cardId).sort()).toEqual(['r-0', 'r-1', 'r-2', 'r-3', 'r-4', 'r-5', 'r-6', 'r-7']);
     for (const it of items) {
       expect(it.options).toHaveLength(3);
       expect(it.options.filter((o) => o.correct)).toHaveLength(1);
-      expect(it.options.every((o) => o.text.length <= 40)).toBe(true);
+      expect(it.options.find((o) => !o.correct)?.label).toMatch(/^label /);
     }
   });
 
   it('puts due cards ahead of new ones', () => {
-    const dueId = 'motiv-03';
     const items = pickRunnerItems(
-      ctx({ cards: { [dueId]: { box: 2, due: T - 1, seen: 1, correct: 1, lastDay: T - 2, lastTs: 0, lastGame: 'lane-runner' } } }),
+      ctx({ cards: { 'r-6': { box: 2, due: T - 1, seen: 1, correct: 1, lastDay: T - 2, lastTs: 0, lastGame: 'lane-runner' } } }),
       1,
     );
-    expect(items[0].cardId).toBe(dueId);
+    expect(items[0].cardId).toBe('r-6');
   });
 
   it('holds back a card missed minutes ago', () => {
-    const q = index.question.get('reinf-01')!;
-    const c = ctx({ cards: { 'reinf-01': { box: 1, due: T, seen: 1, correct: 0, lastDay: T, lastTs: NOW - 1000, lastGame: 'lane-runner' } } });
+    const q = index.question.get('r-1')!;
+    const c = ctx({ cards: { 'r-1': { box: 1, due: T, seen: 1, correct: 0, lastDay: T, lastTs: NOW - 1000, lastGame: 'lane-runner' } } });
     expect(tierOf(q, 'lane-runner', c)).toBe(4);
     expect(tierOf(q, 'lane-runner', { ...c, nowTs: NOW + RECENT_MS })).toBe(1);
   });
 
   it('brings a concept missed in Lane Runner back first in Fruit Slice', () => {
-    const plan = pickSlicePlan(ctx({ conceptMiss: { 'negative-reinforcement': { game: 'lane-runner', day: T, ts: NOW } } }))!;
-    expect(plan.groupId).toBe('reinforcement');
-    expect(plan.waves[0].target).toBe('negative-reinforcement');
+    const plan = pickSlicePlan(ctx({ conceptMiss: { gamma: { game: 'lane-runner', day: T, ts: NOW } } }))!;
+    expect(plan.waves[0].setId).toBe('sort-gamma');
   });
 
-  it('builds slice waves with both targets and lures', () => {
+  it('builds waves from sort sets, with items to slice and items to let fall', () => {
     const plan = pickSlicePlan(ctx())!;
     expect(plan.waves).toHaveLength(3);
     for (const w of plan.waves) {
-      const hits = w.items.filter((i) => i.concept === w.target).length;
-      expect(hits).toBeGreaterThanOrEqual(2);
-      expect(w.items.length - hits).toBeGreaterThanOrEqual(1);
+      expect(w.items.some((i) => i.match)).toBe(true);
+      expect(w.items.some((i) => !i.match)).toBe(true);
     }
   });
 
   it('rejects mcqs whose answers are too long for gates', () => {
-    const q = index.question.get('testing-01');
+    const q = index.question.get('long-1');
     if (q?.type !== 'mcq') throw new Error('fixture');
-    expect(runnerFit({ ...q, answer: 'x'.repeat(41) })).toBeNull();
+    expect(runnerFit(q)).toBeNull();
   });
 });
 

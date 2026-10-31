@@ -34,7 +34,10 @@ export function FeedbackCard({ fb, onContinue }: { fb: Feedback; onContinue: () 
         {fb.misconception && (
           <div className="fb-row">
             <span className="fb-label">Why not</span>
-            <p>{fb.misconception}</p>
+            <p>
+              {fb.label && <span className="fb-mixup">Mix-up: {fb.label}</span>}
+              {fb.misconception}
+            </p>
           </div>
         )}
         {fb.correct && (

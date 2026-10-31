@@ -1,12 +1,12 @@
 /** Fast lookups over a validated deck. Built once per deck and cached. */
-import type { Concept, Deck, Question, SliceGroup, Topic } from './schema';
+import type { Concept, Deck, Question, SortSet, Topic } from './schema';
 
 export interface DeckIndex {
   deck: Deck;
   question: Map<string, Question>;
   concept: Map<string, Concept>;
   topic: Map<string, Topic>;
-  sliceGroup: Map<string, SliceGroup>;
+  sortSet: Map<string, SortSet>;
   byConcept: Map<string, Question[]>;
 }
 
@@ -26,7 +26,7 @@ export function indexDeck(deck: Deck): DeckIndex {
     question: new Map(deck.questions.map((q) => [q.id, q])),
     concept: new Map(deck.concepts.map((c) => [c.id, c])),
     topic: new Map(deck.topics.map((t) => [t.id, t])),
-    sliceGroup: new Map(deck.sliceGroups.map((g) => [g.id, g])),
+    sortSet: new Map(deck.sortSets.map((s) => [s.id, s])),
     byConcept,
   };
   cache.set(deck, idx);

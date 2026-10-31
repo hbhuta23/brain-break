@@ -1,0 +1,467 @@
+{
+ "id": "fixture",
+ "title": "Fixture",
+ "version": "0.0.1",
+ "soloRubric": [],
+ "topics": [
+  {
+   "id": "t1",
+   "title": "Topic 1",
+   "concepts": [
+    "alpha",
+    {
+     "id": "beta",
+     "name": "Beta concept",
+     "definition": "B def"
+    }
+   ]
+  },
+  {
+   "id": "t2",
+   "title": "Topic 2",
+   "concepts": [
+    "gamma"
+   ]
+  }
+ ],
+ "passages": [
+  {
+   "id": "p1",
+   "source": "x.pdf",
+   "lesson": "Lesson",
+   "section": "Section",
+   "text": "Passage text"
+  }
+ ],
+ "questions": [
+  {
+   "id": "r-0",
+   "concept": "beta",
+   "type": "recall",
+   "bloom": "Remember",
+   "games": [
+    "lane-runner",
+    "code-lock"
+   ],
+   "pretest": true,
+   "passage": "p1",
+   "prompt": "Recall 0?",
+   "answer": "Ans 0",
+   "distractors": [
+    {
+     "text": "Wrong 0a",
+     "misconception": "label Wrong 0a",
+     "feedback": "why not Wrong 0a"
+    },
+    {
+     "text": "Wrong 0b",
+     "misconception": "label Wrong 0b",
+     "feedback": "why not Wrong 0b"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "r-1",
+   "concept": "alpha",
+   "type": "recall",
+   "bloom": "Remember",
+   "games": [
+    "lane-runner",
+    "code-lock"
+   ],
+   "pretest": true,
+   "passage": "p1",
+   "prompt": "Recall 1?",
+   "answer": "Ans 1",
+   "distractors": [
+    {
+     "text": "Wrong 1a",
+     "misconception": "label Wrong 1a",
+     "feedback": "why not Wrong 1a"
+    },
+    {
+     "text": "Wrong 1b",
+     "misconception": "label Wrong 1b",
+     "feedback": "why not Wrong 1b"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "r-2",
+   "concept": "beta",
+   "type": "recall",
+   "bloom": "Remember",
+   "games": [
+    "lane-runner",
+    "code-lock"
+   ],
+   "pretest": true,
+   "passage": "p1",
+   "prompt": "Recall 2?",
+   "answer": "Ans 2",
+   "distractors": [
+    {
+     "text": "Wrong 2a",
+     "misconception": "label Wrong 2a",
+     "feedback": "why not Wrong 2a"
+    },
+    {
+     "text": "Wrong 2b",
+     "misconception": "label Wrong 2b",
+     "feedback": "why not Wrong 2b"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "r-3",
+   "concept": "alpha",
+   "type": "recall",
+   "bloom": "Remember",
+   "games": [
+    "lane-runner",
+    "code-lock"
+   ],
+   "pretest": true,
+   "passage": "p1",
+   "prompt": "Recall 3?",
+   "answer": "Ans 3",
+   "distractors": [
+    {
+     "text": "Wrong 3a",
+     "misconception": "label Wrong 3a",
+     "feedback": "why not Wrong 3a"
+    },
+    {
+     "text": "Wrong 3b",
+     "misconception": "label Wrong 3b",
+     "feedback": "why not Wrong 3b"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "r-4",
+   "concept": "beta",
+   "type": "recall",
+   "bloom": "Remember",
+   "games": [
+    "lane-runner",
+    "code-lock"
+   ],
+   "pretest": true,
+   "passage": "p1",
+   "prompt": "Recall 4?",
+   "answer": "Ans 4",
+   "distractors": [
+    {
+     "text": "Wrong 4a",
+     "misconception": "label Wrong 4a",
+     "feedback": "why not Wrong 4a"
+    },
+    {
+     "text": "Wrong 4b",
+     "misconception": "label Wrong 4b",
+     "feedback": "why not Wrong 4b"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "r-5",
+   "concept": "alpha",
+   "type": "recall",
+   "bloom": "Remember",
+   "games": [
+    "lane-runner",
+    "code-lock"
+   ],
+   "pretest": false,
+   "passage": "p1",
+   "prompt": "Recall 5?",
+   "answer": "Ans 5",
+   "distractors": [
+    {
+     "text": "Wrong 5a",
+     "misconception": "label Wrong 5a",
+     "feedback": "why not Wrong 5a"
+    },
+    {
+     "text": "Wrong 5b",
+     "misconception": "label Wrong 5b",
+     "feedback": "why not Wrong 5b"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "r-6",
+   "concept": "beta",
+   "type": "recall",
+   "bloom": "Remember",
+   "games": [
+    "lane-runner",
+    "code-lock"
+   ],
+   "pretest": false,
+   "passage": "p1",
+   "prompt": "Recall 6?",
+   "answer": "Ans 6",
+   "distractors": [
+    {
+     "text": "Wrong 6a",
+     "misconception": "label Wrong 6a",
+     "feedback": "why not Wrong 6a"
+    },
+    {
+     "text": "Wrong 6b",
+     "misconception": "label Wrong 6b",
+     "feedback": "why not Wrong 6b"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "r-7",
+   "concept": "alpha",
+   "type": "recall",
+   "bloom": "Remember",
+   "games": [
+    "lane-runner",
+    "code-lock"
+   ],
+   "pretest": false,
+   "passage": "p1",
+   "prompt": "Recall 7?",
+   "answer": "Ans 7",
+   "distractors": [
+    {
+     "text": "Wrong 7a",
+     "misconception": "label Wrong 7a",
+     "feedback": "why not Wrong 7a"
+    },
+    {
+     "text": "Wrong 7b",
+     "misconception": "label Wrong 7b",
+     "feedback": "why not Wrong 7b"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "long-1",
+   "concept": "alpha",
+   "type": "recall",
+   "bloom": "Remember",
+   "games": [
+    "lane-runner",
+    "code-lock"
+   ],
+   "pretest": false,
+   "passage": "p1",
+   "prompt": "Long?",
+   "answer": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "distractors": [
+    {
+     "text": "a",
+     "misconception": "label a",
+     "feedback": "why not a"
+    },
+    {
+     "text": "b",
+     "misconception": "label b",
+     "feedback": "why not b"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "scen-1",
+   "concept": "alpha",
+   "type": "scenario",
+   "bloom": "Apply",
+   "games": [
+    "scenario-lock"
+   ],
+   "pretest": true,
+   "passage": "p1",
+   "prompt": "Scenario?",
+   "answer": "Alpha",
+   "distractors": [
+    {
+     "text": "Beta",
+     "misconception": "label Beta",
+     "feedback": "why not Beta"
+    },
+    {
+     "text": "Gamma",
+     "misconception": "label Gamma",
+     "feedback": "why not Gamma"
+    },
+    {
+     "text": "Delta",
+     "misconception": "label Delta",
+     "feedback": "why not Delta"
+    }
+   ],
+   "explanation": "because"
+  },
+  {
+   "id": "sort-alpha",
+   "concept": "alpha",
+   "type": "sort",
+   "bloom": "Understand",
+   "games": [
+    "fruit-slice"
+   ],
+   "pretest": false,
+   "passage": "p1",
+   "prompt": "Slice every example of ALPHA",
+   "explanation": "alpha explained",
+   "items": [
+    {
+     "text": "alpha yes 0",
+     "match": true,
+     "why": "fits"
+    },
+    {
+     "text": "alpha yes 1",
+     "match": true,
+     "why": "fits"
+    },
+    {
+     "text": "alpha yes 2",
+     "match": true,
+     "why": "fits"
+    },
+    {
+     "text": "alpha no 0",
+     "match": false,
+     "why": "does not fit"
+    },
+    {
+     "text": "alpha no 1",
+     "match": false,
+     "why": "does not fit"
+    }
+   ]
+  },
+  {
+   "id": "sort-beta",
+   "concept": "beta",
+   "type": "sort",
+   "bloom": "Understand",
+   "games": [
+    "fruit-slice"
+   ],
+   "pretest": false,
+   "passage": "p1",
+   "prompt": "Slice every example of BETA",
+   "explanation": "beta explained",
+   "items": [
+    {
+     "text": "beta yes 0",
+     "match": true,
+     "why": "fits"
+    },
+    {
+     "text": "beta yes 1",
+     "match": true,
+     "why": "fits"
+    },
+    {
+     "text": "beta yes 2",
+     "match": true,
+     "why": "fits"
+    },
+    {
+     "text": "beta no 0",
+     "match": false,
+     "why": "does not fit"
+    },
+    {
+     "text": "beta no 1",
+     "match": false,
+     "why": "does not fit"
+    }
+   ]
+  },
+  {
+   "id": "sort-gamma",
+   "concept": "gamma",
+   "type": "sort",
+   "bloom": "Understand",
+   "games": [
+    "fruit-slice"
+   ],
+   "pretest": false,
+   "passage": "p1",
+   "prompt": "Slice every example of GAMMA",
+   "explanation": "gamma explained",
+   "items": [
+    {
+     "text": "gamma yes 0",
+     "match": true,
+     "why": "fits"
+    },
+    {
+     "text": "gamma yes 1",
+     "match": true,
+     "why": "fits"
+    },
+    {
+     "text": "gamma yes 2",
+     "match": true,
+     "why": "fits"
+    },
+    {
+     "text": "gamma no 0",
+     "match": false,
+     "why": "does not fit"
+    },
+    {
+     "text": "gamma no 1",
+     "match": false,
+     "why": "does not fit"
+    }
+   ]
+  },
+  {
+   "id": "ord-1",
+   "concept": "gamma",
+   "type": "order",
+   "bloom": "Understand",
+   "games": [
+    "ordering-lock"
+   ],
+   "pretest": false,
+   "passage": "p1",
+   "prompt": "Order",
+   "steps": [
+    "a",
+    "b",
+    "c"
+   ],
+   "explanation": "e"
+  },
+  {
+   "id": "exp-1",
+   "concept": "gamma",
+   "type": "explain",
+   "bloom": "Analyze",
+   "games": [
+    "final-door"
+   ],
+   "pretest": false,
+   "passage": "p1",
+   "prompt": "Explain",
+   "modelAnswer": "m",
+   "keyIdeas": [
+    "k"
+   ],
+   "explanation": "e"
+  }
+ ]
+}
